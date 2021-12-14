@@ -25,6 +25,8 @@ function initialPage() {
                 const container = document.getElementById('container');
                 response.data.slice(firstEl, lastEl).forEach((photo) => {
                     container.appendChild(photoCard(photo));
+                var p = document.getElementById('element-num');
+                p.innerText =  `Mostrando ${lastEl} de 500`;;
                 });
             })
             .catch((error) => {
@@ -47,6 +49,8 @@ function loadMore() {
                 const container = document.getElementById('container');
                 response.data.slice(firstEl, lastEl).forEach((photo) => {
                     container.appendChild(photoCard(photo));
+                    var p = document.getElementById('element-num');
+                    p.innerText =  `Mostrando ${lastEl} de 500`;;
                 });
             })
             .catch((error) => {
@@ -61,6 +65,8 @@ function loadMore() {
                 const container = document.getElementById('container');
                 response.data.slice(firstEl, lastEl).forEach((photo) => {
                     container.appendChild(photoList(photo));
+                    var p = document.getElementById('element-num');
+                    p.innerText =  `Mostrando ${lastEl} de 500`;;
                 });
             })
             .catch((error) => {
@@ -82,6 +88,8 @@ document.getElementById('search').addEventListener('input', ({target})  => {
                 const container = document.getElementById('container');
                 filtered.forEach((photo) => {
                     container.appendChild(photoCard(photo));
+                    var p = document.getElementById('element-num');
+                    p.innerText =  `Mostrando ${lastEl} de 500`;;
                 });
             })
             .catch((error) => {
@@ -96,6 +104,8 @@ document.getElementById('search').addEventListener('input', ({target})  => {
                 const container = document.getElementById('container');
                 filtered.forEach((photo) => {
                     container.appendChild(photoList(photo));
+                    var p = document.getElementById('element-num');
+                    p.innerText =  `Mostrando ${lastEl} de 500`;;
                 });
             })
             .catch((error) => {
@@ -130,6 +140,8 @@ function listView () {
                 const container = document.getElementById('container');
                 response.data.slice(firstEl, lastEl).forEach((photo) => {
                     container.appendChild(photoList(photo));
+                    var p = document.getElementById('element-num');
+                    p.innerText =  `Mostrando ${lastEl} de 500`;;
                 });
             })
             .catch((error) => {

@@ -15,7 +15,7 @@ body {
 #title {
   font-size: 64px;
   font-weight: bold;
-  background: #d9d9d9;
+  background: #d8d8d8;
   padding: 32px 64px;
   display: inline-flex;
   justify-content: space-between;
@@ -32,6 +32,7 @@ body {
   font-size: 32px;
   padding: 0px 32px;
   height: 100px;
+  margin-left: 50px;
   margin-right: 100px;
   width: 542px;
 }
@@ -101,16 +102,28 @@ body {
 }
 
 .search-btn {
-  display: flex;
   margin: 30px auto;
+  width: 100%;
+  text-align: center;
+}
+
+#element-num {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    color: lightslategray;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #load-more {
-  font-size: 15px;
-  font-weight: bold;
-  height: 40px;
-  width: 175px;
-  border-radius: 20px;
-  cursor: pointer;
-  background: none;
+    display: block;
+    margin: 0 auto;
+    font-size: 15px;
+    font-weight: bold;
+    height: 40px;
+    width: 175px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(164, 226, 247);
+    font-family: 'Open Sans', sans-serif;
 }
