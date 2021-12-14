@@ -8,12 +8,9 @@
 }
 
 .photo-card .title {
-  max-width: 300px;
-  margin-top: 16px;
-  text-align: left;
-  font-size: 32px;
-}
-
-.botton {
-  height: 1px;
+    max-width: 300px;
+    margin-top: 16px;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Open Sans', sans-serif;
 }

@@ -4,6 +4,7 @@ html, body {
   overflow: auto;
   width: 100%;
   height: auto;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -13,9 +14,10 @@ body {
 
 #title {
   font-size: 64px;
+  font-weight: bold;
   background: #d9d9d9;
   padding: 32px 64px;
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
 }
 
@@ -29,11 +31,12 @@ body {
   border: 0;
   font-size: 32px;
   padding: 0px 32px;
-  height: 100%;
-  margin-right: 32px;
+  height: 100px;
+  margin-right: 100px;
   width: 542px;
 }
 
+/*
 #title .action-container svg {
   height: 64px;
   width: 64px;
@@ -47,6 +50,36 @@ body {
 
 #title .action-container svg.active {
   fill: #42b983;
+}
+*/
+
+#block {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#block .block-img{
+    display: inline;
+    margin-right: 50px;
+    padding: 5px;
+    height: 100px;
+    width:100px;
+}
+
+#list {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+#list .list-img{
+    display: inline;
+    margin-right: 50px;
+    padding: 5px;
+    height: 100px;
+    width:100px;
 }
 
 #container {
@@ -67,7 +100,7 @@ body {
     justify-content: space-between;
 }
 
-.btn {
+.search-btn {
   display: flex;
   margin: 30px auto;
 }
