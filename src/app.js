@@ -89,12 +89,10 @@ function loadMore() {
     };
 };
 */
-//Busca automática (autocomplete)
-
+//Busca automática
 document.getElementById('search').addEventListener('input', ({target})  => {
     const searchInput = target.value;
     filtered = photos.filter(({title}) => title.indexOf(searchInput) >= 0);
-    console.log(filtered);
     container.innerHTML = '';
     filtered.slice(0, lastEl).forEach((photo) => {
         container.appendChild(photoCard(photo));
@@ -105,27 +103,18 @@ document.getElementById('search').addEventListener('input', ({target})  => {
 
 });
 
-    
-    /*
-    if (listViewOn === false) {
-        axios.get('https://jsonplaceholder.typicode.com/photos')  
-            .then((response) => {
-                let filtered = .filter(({title}) => title.indexOf(searchInput) >= 0);
-                const container = document.getElementById('container');
-                filtered.forEach((photo) => {
-                    container.appendChild(photoCard(photo));
-                    var p = document.getElementById('element-num');
-                    p.innerText =  `Mostrando ${lastEl} de 500`;;
-                });
-            })
-            .catch((error) => {
-                alert(error);
-            });
-    }
-    */
+//Visualização por lista    
+document.getElementById('list').addEventListener('click', listView);
 
-    /*
-    if (listViewOn === true) {
+function listView() {
+    container.innerHTML = '';
+    filtered.slice(0, lastEl).forEach((photo) => {
+        container.appendChild(photoList(photo));
+        var p = document.getElementById('element-num');
+        p.innerText =  `Mostrando ${lastEl} de 500`;
+    });
+}
+/*
         axios.get('https://jsonplaceholder.typicode.com/photos')
             .then((response) => {
                 let filtered = response.data.filter(({title}) => title.indexOf(searchInput) >= 0);
@@ -149,8 +138,8 @@ document.getElementById('search').addEventListener('input', ({target})  => {
 
 //Visualização por lista
 
-document.getElementById('list').addEventListener("click", listView);
-
+//document.getElementById('list').addEventListener("click", listView);
+/*
 function listView () {
     firstEl = 0;
     lastEl = 20;
@@ -168,3 +157,4 @@ function listView () {
                 alert(error);
             });
 }
+*/
