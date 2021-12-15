@@ -4,10 +4,10 @@ import '/src/assets/page.css';
 import photoCard from './components/photoCard';
 import photoList from './components/photoList';
 
-var lastEl = 20;
-
 // Todas as Fotos
 var photos = [];
+//Último elemento do array a ser carregado
+var lastEl = 20;
 //Total de fotos
 var totalPhotos = null;
 //Fotos filtradas de acordo com o input
@@ -23,14 +23,15 @@ function getPhotos () {
     axios.get('https://jsonplaceholder.typicode.com/photos')
             .then(function (response) {
                 photos = response.data;
-                //Carrega fotos na tela
-                rendered = photos;
-                rendered.slice(0, lastEl).forEach((photo) => {
-                    container.appendChild(photoCard(photo));
-                totalPhotos = rendered.length;
+                // Carrega fotos na tela
+                rendered = photos.slice(0, lastEl);
+                renderPhotos(rendered)
+                // rendered.forEach((photo) => {
+                //     container.appendChild(photoCard(photo));
+                //     totalPhotos = rendered.length;   
+                // });
                 var p = document.getElementById('element-num');
                 p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
-                });
             })
             .catch((error) => {
                 alert(error);
@@ -39,27 +40,57 @@ function getPhotos () {
 
 getPhotos();
 
+function renderPhotos (rendered) {
+    container.innerHTML = ''
+    rendered.forEach((photo) => {
+        if (listViewOn) {
+            container.appendChild(photoList(photo));
+        } else {
+            container.appendChild(photoCard(photo));
+        }
+        totalPhotos = rendered.length;   
+    });
+}
+
 //Botão "MOSTRAR MAIS" pressionado
 document.getElementById('load-more').addEventListener('click', showMore);
 
 
 function showMore () {
-    lastEl +=20;
-    if(listViewOn === false)
-        rendered.slice(0, lastEl).forEach((photo) => {
-            container.appendChild(photoCard(photo));
-            totalPhotos = rendered.length;
-            var p = document.getElementById('element-num');
-            p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
+    lastEl += 20;
+    rendered = photos.slice(0, lastEl)
+    renderPhotos(rendered)
+
     
-        }); else{
-        rendered.slice(0, lastEl).forEach((photo) => {
-            container.appendChild(photoList(photo));
-            totalPhotos = rendered.length;
-            var p = document.getElementById('element-num');
-            p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
-        });
-    }
+    // // renderizar conteúdo
+    // rendered.slice(0, lastEl).forEach((photo) => {
+    //     if (listViewOn) {
+    //         container.appendChild(photoList(photo));
+    //     } else {
+    //         container.appendChild(photoCard(photo));
+    //     }
+    //     totalPhotos = rendered.length;
+    // });
+    // // setar texto de paginação
+    // var p = document.getElementById('element-num');
+    // p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
+
+    // if (listViewOn) {
+    //     rendered.slice(0, lastEl).forEach((photo) => {
+    //         container.appendChild(photoCard(photo));
+    //         totalPhotos = rendered.length;
+    //         var p = document.getElementById('element-num');
+    //         p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
+    
+    //     });
+    // } else {
+    //     rendered.slice(0, lastEl).forEach((photo) => {
+    //         container.appendChild(photoList(photo));
+    //         totalPhotos = rendered.length;
+    //         var p = document.getElementById('element-num');
+    //         p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
+    //     });
+    // }
 }
 
 //Busca automática
@@ -74,7 +105,9 @@ document.getElementById('search').addEventListener('input', ({target})  => {
             container.appendChild(photoCard(photo));
             totalPhotos = rendered.length;
             var p = document.getElementById('element-num');
-            p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
+            if(rendered.length <= 20){
+                //p.innerText =  `Mostrando ${totalPhotos} de ${totalPhotos}`;
+            }
         });
     } else {
         rendered.slice(0, 20).forEach((photo) => {
@@ -82,6 +115,9 @@ document.getElementById('search').addEventListener('input', ({target})  => {
             totalPhotos = rendered.length;
             var p = document.getElementById('element-num');
             p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
+            if(rendered.length <= 20){
+                //p.innerText =  `Mostrando ${totalPhotos} de ${totalPhotos}`;
+            }
         });
     }
 
@@ -92,12 +128,13 @@ document.getElementById('list').addEventListener('click', listView);
 
 function listView() {
     listViewOn = true;
-    container.innerHTML = '';
-    rendered.slice(0, lastEl).forEach((photo) => {
-        container.appendChild(photoList(photo));
-        var p = document.getElementById('element-num');
-        p.innerText =  `Mostrando ${lastEl} de 500`;
-    });
+    renderPhotos(rendered)
+    // container.innerHTML = '';
+    // rendered.slice(0, lastEl).forEach((photo) => {
+    //     container.appendChild(photoList(photo));
+    //     var p = document.getElementById('element-num');
+    //     p.innerText =  `Mostrando ${lastEl} de 500`;
+    // });
 }
 
 //Visualização por grid
@@ -105,10 +142,11 @@ document.getElementById('grid').addEventListener("click", gridView);
 
 function gridView () {
     listViewOn = false;
-    container.innerHTML = '';
-    rendered.slice(0, lastEl).forEach((photo) => {
-        container.appendChild(photoCard(photo));
-        var p = document.getElementById('element-num');
-        p.innerText =  `Mostrando ${lastEl} de 500`;
-    });
+    renderPhotos(rendered)
+    // container.innerHTML = '';
+    // rendered.slice(0, lastEl).forEach((photo) => {
+    //     container.appendChild(photoCard(photo));
+    //     var p = document.getElementById('element-num');
+    //     p.innerText =  `Mostrando ${lastEl} de 500`;
+    // });
 }
