@@ -8,24 +8,27 @@ var firstEl = 0;
 var lastEl = 20;
 
 // Todas as Fotos
-var photos = []
+var photos = [];
 
 //Total de fotos
 var totalPhotos = null;
 
 //Fotos filtradas de acordo com o input
-var filtered = []
+var filtered = [];
+
+var rendered = [];
 
 //Container onde são carregadas as fotos
 const container = document.getElementById('container');
 
-renderPhotos();
-
 function getPhotos () {
     axios.get('https://jsonplaceholder.typicode.com/photos')
-            .then((response) => {
+            .then(function (response) {
                 photos = response.data;
-                photos.slice(firstEl, lastEl).forEach((photo) => {
+                //Carrega fotos na tela
+                console.log(photos);
+                rendered = photos;
+                rendered.slice(firstEl, lastEl).forEach((photo) => {
                     container.appendChild(photoCard(photo));
                 totalPhotos = photos.length;
                 var p = document.getElementById('element-num');
@@ -35,20 +38,25 @@ function getPhotos () {
             .catch((error) => {
                 alert(error);
             });
-    return photos;
 }
 
-function renderPhotos() {
-    firstEl = 0;
-    lastEl = 20;
-    getPhotos();  
-};
+getPhotos();
 
 //Botão "MOSTRAR MAIS" pressionado
-//document.getElementById('load-more').addEventListener('click', loadMore);
+document.getElementById('load-more').addEventListener('click', showMore);
+
+
+function showMore () {
+    console.log('show more')
+    lastEl +=20;
+    rendered.slice(0, lastEl).forEach((photo) => {
+        container.appendChild(photoCard(photo));
+    console.log('rendered')
+    });
+}
 
 /*
-function loadMore() {
+function showMore() {
     firstEl += 20; //firstEl and lastEl
     lastEl += 20;
 }
