@@ -6,10 +6,10 @@ import photoList from "./components/photoList";
 
 // Todas as Fotos
 var photos = [];
-//Último elemento do array a ser carregado
-var lastEl = 20;
 //Total de fotos
 var totalPhotos = null;
+//Último elemento do array a ser carregado
+var lastEl = 20;
 //Fotos filtradas de acordo com o input
 var filtered = [];
 //Fotos que são renderizadas na página
@@ -26,22 +26,12 @@ function getPhotos() {
       photos = response.data;
       // Carrega fotos na tela
       rendered = photos;
+      totalPhotos = photos.length;
       renderPhotos(rendered);
     })
     .catch((error) => {
       alert(error);
     });
-}
-
-function paginator() {
-  totalPhotos = rendered.length;
-  if (totalPhotos > lastEl) {
-    var p = document.getElementById("element-num");
-    p.innerText = `Mostrando ${lastEl} de ${totalPhotos}`;
-  } else {
-    var p = document.getElementById("element-num");
-    p.innerText = `Mostrando ${totalPhotos} de ${totalPhotos}`;
-  }
 }
 
 getPhotos();
@@ -56,6 +46,18 @@ function renderPhotos(rendered) {
     }
   });
   paginator();
+  console.log(totalPhotos)
+}
+
+function paginator() {
+    if(totalPhotos >= lastEl) {
+      var p = document.getElementById("element-num");
+      p.innerText = `Mostrando ${lastEl} de ${totalPhotos}`;
+    } else {
+    var p = document.getElementById("element-num");
+    totalPhotos = filtered.length;
+    p.innerText = `Mostrando ${totalPhotos} de ${totalPhotos}`;
+  }
 }
 
 //Botão "MOSTRAR MAIS" pressionado
@@ -73,6 +75,7 @@ document.getElementById("search").addEventListener("input", ({ target }) => {
   filtered = photos.filter(({ title }) => title.indexOf(searchInput) >= 0);
   rendered = filtered.slice(0, 20);
   renderPhotos(rendered);
+  totalPhotos = filtered.length;
 });
 
 //Visualização por lista
