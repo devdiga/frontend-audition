@@ -14,13 +14,8 @@ var lastEl = 20;
 if (searching === false && listViewOn === false)
     initialPage();
 
-function initialPage() {
-    listViewOn = false;
-    document.getElementById('container').innerHTML = '';
-    firstEl = 0;
-    lastEl = 20;
-    if (lastEl === 20) {
-        axios.get('https://jsonplaceholder.typicode.com/photos')
+function getPhotos () {
+    axios.get('https://jsonplaceholder.typicode.com/photos')
             .then((response) => {
                 const container = document.getElementById('container');
                 response.data.slice(firstEl, lastEl).forEach((photo) => {
@@ -32,7 +27,14 @@ function initialPage() {
             .catch((error) => {
                 alert(error);
             });
-    };
+}
+
+function initialPage() {
+    listViewOn = false;
+    document.getElementById('container').innerHTML = '';
+    firstEl = 0;
+    lastEl = 20;
+    getPhotos();
 };
 
 //Botão "MOSTRAR MAIS" pressionado
