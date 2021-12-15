@@ -24,28 +24,38 @@ function getPhotos () {
             .then(function (response) {
                 photos = response.data;
                 // Carrega fotos na tela
-                rendered = photos.slice(0, lastEl);
+                rendered = photos;
                 renderPhotos(rendered)
-                var p = document.getElementById('element-num');
-                p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
             })
             .catch((error) => {
                 alert(error);
             });
 }
 
+function paginator () {
+    totalPhotos = rendered.length;
+    if (totalPhotos > lastEl) {
+        var p = document.getElementById('element-num');
+        p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
+    } else {
+        var p = document.getElementById('element-num');
+        p.innerText =  `Mostrando ${totalPhotos} de ${totalPhotos}`;
+    }
+    
+}
+
 getPhotos();
 
 function renderPhotos (rendered) {
     container.innerHTML = ''
-    rendered.forEach((photo) => {
+    rendered.slice(0, lastEl).forEach((photo) => {
         if (listViewOn) {
             container.appendChild(photoList(photo));
         } else {
             container.appendChild(photoCard(photo));
-        }
-        totalPhotos = rendered.length;   
+        }      
     });
+    paginator();
 }
 
 //Botão "MOSTRAR MAIS" pressionado
@@ -64,26 +74,6 @@ document.getElementById('search').addEventListener('input', ({target})  => {
     filtered = photos.filter(({title}) => title.indexOf(searchInput) >= 0);
     rendered = filtered.slice(0, 20);
     renderPhotos(rendered);
-    /*      rendered.slice(0, 20).forEach((photo) => {
-            container.appendChild(photoCard(photo));
-            totalPhotos = rendered.length;
-            var p = document.getElementById('element-num');
-            if(rendered.length <= 20){
-                //p.innerText =  `Mostrando ${totalPhotos} de ${totalPhotos}`;
-            }
-        });
-    } else {
-        rendered.slice(0, 20).forEach((photo) => {
-            container.appendChild(photoList(photo));
-            totalPhotos = rendered.length;
-            var p = document.getElementById('element-num');
-            p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
-            if(rendered.length <= 20){
-                //p.innerText =  `Mostrando ${totalPhotos} de ${totalPhotos}`;
-            }
-        });
-    } */
-
 });
 
 //Visualização por lista    
