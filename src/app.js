@@ -4,7 +4,6 @@ import '/src/assets/page.css';
 import photoCard from './components/photoCard';
 import photoList from './components/photoList';
 
-var firstEl = 0;
 var lastEl = 20;
 
 // Todas as Fotos
@@ -26,9 +25,9 @@ function getPhotos () {
                 photos = response.data;
                 //Carrega fotos na tela
                 rendered = photos;
-                rendered.slice(firstEl, lastEl).forEach((photo) => {
+                rendered.slice(0, lastEl).forEach((photo) => {
                     container.appendChild(photoCard(photo));
-                totalPhotos = photos.length;
+                totalPhotos = rendered.length;
                 var p = document.getElementById('element-num');
                 p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
                 });
@@ -49,9 +48,16 @@ function showMore () {
     if(listViewOn === false)
         rendered.slice(0, lastEl).forEach((photo) => {
             container.appendChild(photoCard(photo));
+            totalPhotos = rendered.length;
+            var p = document.getElementById('element-num');
+            p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
+    
         }); else{
         rendered.slice(0, lastEl).forEach((photo) => {
             container.appendChild(photoList(photo));
+            totalPhotos = rendered.length;
+            var p = document.getElementById('element-num');
+            p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
         });
     }
 }
@@ -63,17 +69,19 @@ document.getElementById('search').addEventListener('input', ({target})  => {
     rendered = filtered;
     lastEl = 20;
     container.innerHTML = '';
-
     if(listViewOn === false) {
-        rendered.slice(0, lastEl).forEach((photo) => {
+        rendered.slice(0, 20).forEach((photo) => {
             container.appendChild(photoCard(photo));
-            totalPhotos = filtered.length;
+            totalPhotos = rendered.length;
             var p = document.getElementById('element-num');
             p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
         });
     } else {
-        rendered.slice(0, lastEl).forEach((photo) => {
+        rendered.slice(0, 20).forEach((photo) => {
             container.appendChild(photoList(photo));
+            totalPhotos = rendered.length;
+            var p = document.getElementById('element-num');
+            p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
         });
     }
 
