@@ -49,8 +49,7 @@ function showMore () {
     if(listViewOn === false)
         rendered.slice(0, lastEl).forEach((photo) => {
             container.appendChild(photoCard(photo));
-        });
-    else{
+        }); else{
         rendered.slice(0, lastEl).forEach((photo) => {
             container.appendChild(photoList(photo));
         });
@@ -62,13 +61,21 @@ document.getElementById('search').addEventListener('input', ({target})  => {
     const searchInput = target.value;
     filtered = photos.filter(({title}) => title.indexOf(searchInput) >= 0);
     rendered = filtered;
+    lastEl = 20;
     container.innerHTML = '';
-    rendered.slice(0, lastEl).forEach((photo) => {
-        container.appendChild(photoCard(photo));
-        totalPhotos = filtered.length;
-        var p = document.getElementById('element-num');
-        p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
-    });
+
+    if(listViewOn === false) {
+        rendered.slice(0, lastEl).forEach((photo) => {
+            container.appendChild(photoCard(photo));
+            totalPhotos = filtered.length;
+            var p = document.getElementById('element-num');
+            p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
+        });
+    } else {
+        rendered.slice(0, lastEl).forEach((photo) => {
+            container.appendChild(photoList(photo));
+        });
+    }
 
 });
 
@@ -85,29 +92,15 @@ function listView() {
     });
 }
 
-//Visualização por bloco
+//Visualização por grid
+document.getElementById('grid').addEventListener("click", gridView);
 
-//document.getElementById('block').addEventListener("click", initialPage);
-
-//Visualização por lista
-
-//document.getElementById('list').addEventListener("click", listView);
-/*
-function listView () {
-    firstEl = 0;
-    lastEl = 20;
-    document.getElementById('container').innerHTML = '';
-    axios.get('https://jsonplaceholder.typicode.com/photos')
-            .then((response) => {
-                const container = document.getElementById('container');
-                response.data.slice(firstEl, lastEl).forEach((photo) => {
-                    container.appendChild(photoList(photo));
-                    var p = document.getElementById('element-num');
-                    p.innerText =  `Mostrando ${lastEl} de 500`;
-                });
-            })
-            .catch((error) => {
-                alert(error);
-            });
+function gridView () {
+    listViewOn = false;
+    container.innerHTML = '';
+    rendered.slice(0, lastEl).forEach((photo) => {
+        container.appendChild(photoCard(photo));
+        var p = document.getElementById('element-num');
+        p.innerText =  `Mostrando ${lastEl} de 500`;
+    });
 }
-*/
