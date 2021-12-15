@@ -1,10 +1,11 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow: auto;
   width: 100%;
   height: auto;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -37,50 +38,32 @@ body {
   width: 542px;
 }
 
-/*
-#title .action-container svg {
-  height: 64px;
-  width: 64px;
-  fill: #808080;
-  margin-left: 16px;
-}
-
-#title .action-container svg:hover {
+#grid {
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
-#title .action-container svg.active {
-  fill: #42b983;
-}
-*/
-
-#grid {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-#grid .grid-img{
-    display: inline;
-    margin-right: 50px;
-    padding: 5px;
-    height: 100px;
-    width:100px;
+#grid .grid-img {
+  display: inline;
+  margin-right: 50px;
+  padding: 5px;
+  height: 100px;
+  width: 100px;
 }
 
 #list {
-    background: none;
-    border: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-
-#list .list-img{
-    display: inline;
-    margin-right: 50px;
-    padding: 5px;
-    height: 100px;
-    width:100px;
+#list .list-img {
+  display: inline;
+  margin-right: 50px;
+  padding: 5px;
+  height: 100px;
+  width: 100px;
 }
 
 #container {
@@ -93,12 +76,12 @@ body {
 }
 
 #container-busca {
-    padding: 32px 0px;
-    overflow-y: auto;
-    flex-grow: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  padding: 32px 0px;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .search-btn {
@@ -108,22 +91,22 @@ body {
 }
 
 #element-num {
-    display: block;
-    width: 100%;
-    font-size: 15px;
-    color: lightslategray;
-    font-family: 'Open Sans', sans-serif;
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  color: lightslategray;
+  font-family: "Open Sans", sans-serif;
 }
 
 #load-more {
-    display: block;
-    margin: 0 auto;
-    font-size: 15px;
-    font-weight: bold;
-    height: 40px;
-    width: 175px;
-    border-radius: 20px;
-    cursor: pointer;
-    background-color: rgb(164, 226, 247);
-    font-family: 'Open Sans', sans-serif;
+  display: block;
+  margin: 0 auto;
+  font-size: 15px;
+  font-weight: bold;
+  height: 40px;
+  width: 175px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(164, 226, 247);
+  font-family: "Open Sans", sans-serif;
 }
