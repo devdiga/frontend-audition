@@ -26,10 +26,6 @@ function getPhotos () {
                 // Carrega fotos na tela
                 rendered = photos.slice(0, lastEl);
                 renderPhotos(rendered)
-                // rendered.forEach((photo) => {
-                //     container.appendChild(photoCard(photo));
-                //     totalPhotos = rendered.length;   
-                // });
                 var p = document.getElementById('element-num');
                 p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
             })
@@ -58,50 +54,17 @@ document.getElementById('load-more').addEventListener('click', showMore);
 
 function showMore () {
     lastEl += 20;
-    rendered = photos.slice(0, lastEl)
-    renderPhotos(rendered)
-
-    
-    // // renderizar conteúdo
-    // rendered.slice(0, lastEl).forEach((photo) => {
-    //     if (listViewOn) {
-    //         container.appendChild(photoList(photo));
-    //     } else {
-    //         container.appendChild(photoCard(photo));
-    //     }
-    //     totalPhotos = rendered.length;
-    // });
-    // // setar texto de paginação
-    // var p = document.getElementById('element-num');
-    // p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
-
-    // if (listViewOn) {
-    //     rendered.slice(0, lastEl).forEach((photo) => {
-    //         container.appendChild(photoCard(photo));
-    //         totalPhotos = rendered.length;
-    //         var p = document.getElementById('element-num');
-    //         p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
-    
-    //     });
-    // } else {
-    //     rendered.slice(0, lastEl).forEach((photo) => {
-    //         container.appendChild(photoList(photo));
-    //         totalPhotos = rendered.length;
-    //         var p = document.getElementById('element-num');
-    //         p.innerText =  `Mostrando ${lastEl} de ${totalPhotos}`;
-    //     });
-    // }
+    rendered = photos.slice(0, lastEl);
+    renderPhotos(rendered);
 }
 
 //Busca automática
 document.getElementById('search').addEventListener('input', ({target})  => {
     const searchInput = target.value;
     filtered = photos.filter(({title}) => title.indexOf(searchInput) >= 0);
-    rendered = filtered;
-    lastEl = 20;
-    container.innerHTML = '';
-    if(listViewOn === false) {
-        rendered.slice(0, 20).forEach((photo) => {
+    rendered = filtered.slice(0, 20);
+    renderPhotos(rendered);
+    /*      rendered.slice(0, 20).forEach((photo) => {
             container.appendChild(photoCard(photo));
             totalPhotos = rendered.length;
             var p = document.getElementById('element-num');
@@ -119,7 +82,7 @@ document.getElementById('search').addEventListener('input', ({target})  => {
                 //p.innerText =  `Mostrando ${totalPhotos} de ${totalPhotos}`;
             }
         });
-    }
+    } */
 
 });
 
@@ -128,13 +91,7 @@ document.getElementById('list').addEventListener('click', listView);
 
 function listView() {
     listViewOn = true;
-    renderPhotos(rendered)
-    // container.innerHTML = '';
-    // rendered.slice(0, lastEl).forEach((photo) => {
-    //     container.appendChild(photoList(photo));
-    //     var p = document.getElementById('element-num');
-    //     p.innerText =  `Mostrando ${lastEl} de 500`;
-    // });
+    renderPhotos(rendered);
 }
 
 //Visualização por grid
@@ -142,11 +99,5 @@ document.getElementById('grid').addEventListener("click", gridView);
 
 function gridView () {
     listViewOn = false;
-    renderPhotos(rendered)
-    // container.innerHTML = '';
-    // rendered.slice(0, lastEl).forEach((photo) => {
-    //     container.appendChild(photoCard(photo));
-    //     var p = document.getElementById('element-num');
-    //     p.innerText =  `Mostrando ${lastEl} de 500`;
-    // });
+    renderPhotos(rendered);
 }
