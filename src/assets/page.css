@@ -13,6 +13,10 @@ body {
   flex-direction: column;
 }
 
+h3 {
+  color: rgb(30, 150, 225)
+}
+
 #title {
   font-size: 64px;
   font-weight: bold;
@@ -107,6 +111,6 @@ body {
   width: 175px;
   border-radius: 20px;
   cursor: pointer;
-  background-color: rgb(164, 226, 247);
+  background-color: rgb(115, 215, 245);
   font-family: "Open Sans", sans-serif;
 }
