@@ -46,7 +46,6 @@ function renderPhotos(rendered) {
     }
   });
   paginator();
-  console.log(totalPhotos)
 }
 
 function paginator() {
@@ -64,9 +63,11 @@ function paginator() {
 document.getElementById("load-more").addEventListener("click", showMore);
 
 function showMore() {
-  lastEl += 20;
-  rendered = photos.slice(0, lastEl);
-  renderPhotos(rendered);
+  if(lastEl < totalPhotos){
+    lastEl += 20;
+    rendered = photos.slice(0, lastEl);
+    renderPhotos(rendered);
+  }
 }
 
 //Busca automática
