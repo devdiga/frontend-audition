@@ -1,5 +1,5 @@
 .photo-card {
-  margin: auto;
+  margin: 15px auto;
   padding: 32px 48px;
   text-align: left;
   justify-content: space-around;
@@ -11,7 +11,7 @@
 
 .photo-card .title {
   max-width: 280px;
-  margin-top: 16px;
+  margin-top: auto;
   text-align: center;
   font-size: 32px;
   font-family: "Open Sans", sans-serif;
