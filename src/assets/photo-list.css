@@ -14,3 +14,18 @@
   vertical-align: middle;
   font-size: 20px;
 }
+
+@media only screen and (max-device-width: 720px) {
+  .photo-row {
+    display: table;
+    margin: 15px 15px;
+  }
+
+  .photo-row .title {
+    display: table-cell;
+    float:inline-end;
+    vertical-align: middle;
+    font-size: 12px;
+
+  }
+}

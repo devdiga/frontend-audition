@@ -14,11 +14,12 @@ body {
 }
 
 h3 {
-  color: rgb(30, 150, 225)
+  color: rgb(30, 150, 225);
+  margin-right: 50px;
 }
 
 #title {
-  font-size: 64px;
+  font-size: 53px;
   font-weight: bold;
   background: #d8d8d8;
   padding: 32px 64px;
@@ -37,8 +38,7 @@ h3 {
   font-size: 32px;
   padding: 0px 32px;
   height: 100px;
-  margin-left: 50px;
-  margin-right: 100px;
+  margin: auto 50px auto auto;
   width: 542px;
 }
 
@@ -113,4 +113,46 @@ h3 {
   cursor: pointer;
   background-color: rgb(115, 215, 245);
   font-family: "Open Sans", sans-serif;
+}
+
+@media only screen and (max-device-width: 960px) {
+  body{
+    width: 100%;
+  }
+ }
+
+@media only screen and (max-device-width: 720px) {
+  h3{
+    margin: 15px auto;
+  }
+
+  #title {
+    font-size: 26px;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  #title .action-container
+  {
+    text-align: center;
+  }
+  #title .action-container #search {
+    height: 30px;
+    width: 110px;
+    font-size: 16px;
+    text-align: left;
+    margin: auto;
+  }
+
+  #grid .grid-img {
+    margin: auto;
+    height: 30px;
+    width: 30px;
+  }
+
+  #list .list-img {
+    margin: auto;
+    height: 30px;
+    width: 30px;
+  }
 }
