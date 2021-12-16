@@ -1,9 +1,11 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
   width: 100%;
-  height:  100%;
+  height: auto;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -11,11 +13,17 @@ body {
   flex-direction: column;
 }
 
+h3 {
+  color: rgb(30, 150, 225);
+  margin-right: 50px;
+}
+
 #title {
-  font-size: 64px;
-  background: #d9d9d9;
+  font-size: 53px;
+  font-weight: bold;
+  background: #d8d8d8;
   padding: 32px 64px;
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
 }
 
@@ -29,31 +37,123 @@ body {
   border: 0;
   font-size: 32px;
   padding: 0px 32px;
-  height: 100%;
-  margin-right: 32px;
+  height: 100px;
+  margin: auto 50px auto auto;
   width: 542px;
 }
 
-#title .action-container svg {
-  height: 64px;
-  width: 64px;
-  fill: #808080;
-  margin-left: 16px;
-}
-
-#title .action-container svg:hover {
+#grid {
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
-#title .action-container svg.active {
-  fill: #42b983;
+#grid .grid-img {
+  display: inline;
+  margin-right: 50px;
+  padding: 5px;
+  height: 100px;
+  width: 100px;
+}
+
+#list {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#list .list-img {
+  display: inline;
+  margin-right: 50px;
+  padding: 5px;
+  height: 100px;
+  width: 100px;
 }
 
 #container {
+  margin: 15px auto;
   padding: 32px 0px;
   overflow-y: auto;
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+#container-busca {
+  padding: 32px 0px;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search-btn {
+  margin: 30px auto;
+  width: 100%;
+  text-align: center;
+}
+
+#element-num {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  color: lightslategray;
+  font-family: "Open Sans", sans-serif;
+}
+
+#load-more {
+  display: block;
+  margin: 0 auto;
+  font-size: 15px;
+  font-weight: bold;
+  height: 40px;
+  width: 175px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(115, 215, 245);
+  font-family: "Open Sans", sans-serif;
+}
+
+@media only screen and (max-device-width: 960px) {
+  body{
+    width: 100%;
+  }
+ }
+
+@media only screen and (max-device-width: 720px) {
+  h3{
+    margin: 15px auto;
+  }
+
+  #title {
+    font-size: 26px;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  #title .action-container
+  {
+    text-align: center;
+  }
+  #title .action-container #search {
+    height: 30px;
+    width: 110px;
+    font-size: 16px;
+    text-align: left;
+    margin: auto;
+  }
+
+  #grid .grid-img {
+    margin: auto;
+    height: 30px;
+    width: 30px;
+  }
+
+  #list .list-img {
+    margin: auto;
+    height: 30px;
+    width: 30px;
+  }
 }
