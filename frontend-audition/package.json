@@ -1,5 +1,6 @@
 {
   "version": "0.1.0",
+  "homepage": "http://Bruno-AlvesBR.github.io/frontend-audition",
   "description": "This README would normally document whatever steps are necessary to get your application up and running.",
   "private": true,
   "dependencies": {
@@ -11,12 +12,15 @@
     "css-loader": "^6.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }

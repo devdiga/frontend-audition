@@ -1,6 +1,6 @@
 /* eslint-disable no-use-before-define */
 import React, { useEffect, useState } from "react";
-import { Content } from './layout/Main-styled.js';
+import { Content } from './layout/Fotos-styled.js';
 import axios from 'axios';
 import Aos from 'aos';
 import 'aos/dist/aos.css';

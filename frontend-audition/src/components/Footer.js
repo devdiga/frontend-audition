@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Content } from './layout/Footer-styled';
 
 export default function Footer()
@@ -26,33 +27,32 @@ export default function Footer()
                             <a href="#">Facebook</a>
                         </li>
                     </ul>
+                </div>
 
-                    </div>
-
-                    <div className='box-info'>
+                <div className='box-info'>
                     <h2>About Us</h2>
                     <ul>
                         <li>
-                            <a href="">Home</a>
+                            <Link to="/frontend-audition">Home</Link>
                         </li>
                         <li>
-                            <a href="">Description</a>
+                            <Link to="/frontend-audition/Description">Description</Link>
                         </li>
                         <li>
-                            <a href="">About</a>
+                            <Link to="/frontend-audition/About">About</Link>
                         </li>
                     </ul>
-                    </div>
+                </div>
 
-                    <div className='box-info'>
+                <div className='box-info'>
                     <h2>Fotos</h2>
                     <ul>
                         <li>
-                            <a href="">Fotos</a>
+                            <Link to="/frontend-audition/photos">Fotos</Link>
                         </li>
                     </ul>    
                 </div>
-                
+
             </div>
         </Content>
     )
