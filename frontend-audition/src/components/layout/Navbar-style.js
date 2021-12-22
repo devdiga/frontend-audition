@@ -25,7 +25,8 @@ export const Content = Styled.div`
             {
                 text-decoration: none;
                 font-weight: bold;
-                color: #7e7d7d;
+                text-shadow: 0px 0px 30px #00000070;
+                color: red;
                 font-size: 2rem;
             }
 
@@ -43,10 +44,11 @@ export const Content = Styled.div`
                     color: #7e7d7d;
                     font-weight: bold;
                     font-size: 1.2rem;
+                    text-shadow: none;
 
                     &:hover 
                     {
-                        color: #000;
+                        color: red;
                     }
                 }
             }

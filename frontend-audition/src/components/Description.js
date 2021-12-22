@@ -15,7 +15,12 @@ export default function Description()
         <Content>
 
             <div data-aos="fade-up" className="box-description">
-                
+                <h2>
+                    Description
+                </h2>
+                <p> 
+                    Este site foi feito usando API de fotos fake para testes, ReactJs, Hooks, Aos, Html, Css, Javascript.
+                </p>
             </div>
 
         </Content>

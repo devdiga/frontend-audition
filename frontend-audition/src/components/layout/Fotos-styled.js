@@ -22,8 +22,8 @@ export const Content = styled.div`
         {
             border: none;
             border-radius: 10px;
-            width: 70%;
-            padding: 10px 15px;
+            width: 75%;
+            padding: 15px 15px;
             margin: 0;
         }
 
@@ -106,6 +106,17 @@ export const Content = styled.div`
         .search-box
         {
             width: 90%;
+        }
+    }
+
+    @media (min-width: 260px) and (max-width: 500px)
+    {
+        .search-box
+        {
+            svg 
+            {
+                display: none;
+            }
         }
     }
 

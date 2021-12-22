@@ -16,7 +16,7 @@ export default function Page()
 
         response.data.slice(0, ultimaQtd).forEach((photo) => 
         {
-            container.appendChild(PhotoCard(photo));
+            container.appendChild(PhotoCard(photo))
         });
     });
 
@@ -31,7 +31,7 @@ export default function Page()
 
             response.data.slice(qtd, somaQtd).forEach((photo) => 
             {
-                container.appendChild(PhotoCard(photo));
+                container.appendChild(PhotoCard(photo))
             });
         });
         
@@ -44,26 +44,32 @@ export default function Page()
     //     response(filter)
     // } 
 
-    
-    const container = document.getElementById('container');
-    const blocoIcon = document.getElementById('bloco');
-    const listaIcon = document.getElementById('lista');
 
     function clicarBloco()
     {
-        container.style.display = 'flex';
-        container.style.flexDirection = 'row';
-        blocoIcon.style.fill = 'red';
-        listaIcon.style.fill = '#aaa';
-    };
+        if(document.getElementById('container') &&
+           document.getElementById('bloco') &&
+           document.getElementById('lista'))
+        {
+            document.getElementById('container').style.display = "flex"
+            document.getElementById('container').style.flexDirection = "row"
+            document.getElementById('bloco').style.fill = 'red'
+            document.getElementById('lista').style.fill = '#aaa'
+        }
+    }
 
     function clicarLista()
     {
-        container.style.display = 'flex';
-        container.style.flexDirection = 'column';
-        blocoIcon.style.fill = '#aaa';
-        listaIcon.style.fill = 'red';
-    };
+        if(document.getElementById('container') &&
+           document.getElementById('bloco') &&
+           document.getElementById('lista'))
+        {
+            document.getElementById('container').style.display = "flex"
+            document.getElementById('container').style.flexDirection = "column"
+            document.getElementById('bloco').style.fill = '#aaa'
+            document.getElementById('lista').style.fill = 'red'
+        }
+    }
 
 
     useEffect(() =>
@@ -81,7 +87,7 @@ export default function Page()
                     placeholder='Pesquise por nomes de fotos'
                     // onChange={handleChange}
                 />
-                <svg id="bloco" onClick={clicarBloco} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><g fill-rule="evenodd"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></g></svg>
+                <svg id="bloco" onClick={clicarBloco} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><g fillRule="evenodd"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></g></svg>
                 <svg id="lista" onClick={clicarLista} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z"/></svg>
             </div>
 

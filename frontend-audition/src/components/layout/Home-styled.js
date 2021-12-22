@@ -15,6 +15,7 @@ export const Content = styled.div`
         height: auto;
         margin: auto;
         display: flex;
+        align-items: center;
         flex-wrap: wrap;
         background-color: #fff;
         padding: 10px;
@@ -36,12 +37,13 @@ export const Content = styled.div`
             a 
             {
                 text-decoration: none;
-                color: #000000;
-                border: 1px solid #000;
+                color: red;
+                border: .5px solid red;
                 font-size: 1rem;
                 padding: 7px 12px;
                 margin: 15px;
                 transition: .2s;
+                font-weight: bold;
 
                 &:hover 
                 {

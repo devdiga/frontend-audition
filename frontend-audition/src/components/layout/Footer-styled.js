@@ -24,7 +24,7 @@ export const Content = Styled.div`
             flex-direction: column;
             align-items: center;
             margin: 15px;
-            color: #000;
+            color: red;
 
             h2 
             {
@@ -59,7 +59,7 @@ export const Content = Styled.div`
 
                         &:hover 
                         {
-                            color: #000;
+                            color: red;
                         }
                     }
                 }
