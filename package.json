@@ -1,0 +1,30 @@
+{
+  "name": "diga-frontend-audition",
+  "version": "0.0.1",
+  "description": "This README would normally document whatever steps are necessary to get your application up and running.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/devdiga/frontend-audition.git"
+  },
+  "author": "Arthur Borba",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://bitbucket.org/devdiga/frontend-audition/issues"
+  },
+  "homepage": "https://bitbucket.org/devdiga/frontend-audition#readme",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
