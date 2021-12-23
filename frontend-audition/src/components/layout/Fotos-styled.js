@@ -54,6 +54,43 @@ export const Content = styled.div`
         margin: auto;
         align-items: center;
         justify-content: center;
+
+            .box-foto 
+            {
+                position: relative;
+                margin: 10px;
+                width: 31%;
+                height: 350px;
+                border: .5px solid #fff;
+                border-radius: 10px;
+                text-align: center;
+                color: #7e7d7d;
+                background-color: #fff;
+                box-shadow: 0px 0px 30px #0000003b;
+
+                
+                img 
+                {
+                    width: 100%;
+                    height: 225px;
+                    object-fit: cover;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    pointer-events: none;
+                    margin: auto;
+                }
+
+                h2 
+                {
+                    margin: 25px;
+                    text-align: center;
+                }
+
+                p
+                {
+                    display: none;
+                }
+            }
     }
 
     .scroll-to-top
@@ -71,6 +108,7 @@ export const Content = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        box-shadow: 0px 0px 20px #00000030;
 
         a 
         {
@@ -106,6 +144,42 @@ export const Content = styled.div`
         .search-box
         {
             width: 90%;
+        }
+
+        #container 
+        {
+            .box-foto 
+            {
+                width: 90%;
+                height: 60px;   
+                display: flex;
+                justify-content: space-between;
+
+                img 
+                {
+                    max-width: 45%;
+                    height: 100%;
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 0;
+                    border-top-right-radius: 0;
+                }
+
+                h2
+                {
+                    margin: auto;
+                    font-size: .7rem;
+                    width: 55%;
+                }
+
+                p 
+                {
+                    color: #7e7d7d;
+                    font-size: .8rem;
+                    display: flex;
+                    position: relative;
+                    left: 0%;
+                }
+            }
         }
     }
 

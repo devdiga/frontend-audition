@@ -17,8 +17,8 @@ export default function PhotoCard(item)
     const card = document.createElement('div');
     card.className = 'photo-card';
     card.appendChild(img);
-    card.appendChild(id);
     card.appendChild(txt);
+    card.appendChild(id);
 
     return card;
 }

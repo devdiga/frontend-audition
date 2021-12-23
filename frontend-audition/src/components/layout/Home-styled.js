@@ -44,6 +44,7 @@ export const Content = styled.div`
                 margin: 15px;
                 transition: .2s;
                 font-weight: bold;
+                border-radius: 5px;
 
                 &:hover 
                 {

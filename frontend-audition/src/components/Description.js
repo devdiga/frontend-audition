@@ -19,7 +19,7 @@ export default function Description()
                     Description
                 </h2>
                 <p> 
-                    Este site foi feito usando API de fotos fake para testes, ReactJs, Hooks, Aos, Html, Css, Javascript.
+                    Este site foi feito usando API de fotos fake para testes, ReactJs, Hooks, Aos, Axios, Html, Css, Javascript.
                 </p>
             </div>
 
