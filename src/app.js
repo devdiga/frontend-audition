@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { createApp } from 'vue'
+import App from './App.vue';
 import '/src/assets/page.css';
 
 import photoCard from './components/photoCard';
@@ -13,3 +15,9 @@ axios.get('https://jsonplaceholder.typicode.com/photos')
   .catch((error) => {
     alert(error);
   });
+
+
+createApp(App).mount('#app')
+
+
+
