@@ -18,9 +18,14 @@
   },
   "homepage": "https://bitbucket.org/devdiga/frontend-audition#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
+    "vue": "^3.2.26",
+    "vue-cli": "^2.9.6",
+    "vue-loader": "^17.0.0",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"
   },
