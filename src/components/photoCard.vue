@@ -1,6 +1,8 @@
 <template>
-  <div class="photo-card teste">
-    <img :src="photo.url" />
+  <div :class="type == 'list' ? 'photo-card-list' : 'photo-card-grid'">
+ 	<div class="image">
+    	<img :src="photo.url" />
+	 </div>
     <div class="title">
       {{ photo.title }}
     </div>
@@ -9,11 +11,11 @@
 
 <script>
 export default {
-  props: ["photo"],
+  props: ["photo", "type"],
   created() {},
 };
 </script>
 
 <style>
-	@import "../assets/photo-card.css";
+@import "../assets/photo-card.css";
 </style>
