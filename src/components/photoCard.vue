@@ -4,7 +4,7 @@
     	<img :src="type=='list'? photo.thumbnailUrl:photo.url" />
 	 </div>
     <div class="title">
-		<span v-html="type=='list'? 'Id : ' + photo.id +'<br> ':'<hr>' "></span>
+		<span v-html="type=='list'? 'Id : ' + photo.id +'<br> ':'' "></span>
  	    {{ photo.title }}
     </div>
   </div>

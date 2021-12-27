@@ -5,8 +5,9 @@
     Photo Library 
     <div class="action-container">
       <input id="search" v-model="search" type="text" placeholder="Busca" />
-      <button class="button search-btn" @click="getFotos"> 
-        <i class="fas fa-search fa-3x"></i>
+      <button id="button-search" class="button search-btn" @click="getFotos"> 
+        <i id="icon-search-big" class="fas fa-search fa-3x"></i>
+        <i id="icon-search-min" class="fas fa-search fa"></i>
       </button>
       <svg
         @click="typeFormat='grid'"
@@ -32,7 +33,9 @@
     </div>
   </div>
     <div id="container" :class="typeFormat=='list'?'container-list':'container-grid'" v-if="mount">
+        <div v-show="photos.length<1" style="text-align: center;"> <h1>&nbsp;&nbsp;&nbsp;&nbsp; No photos were found </h1></div>
         <photoCard :type="typeFormat" :photo="photo" v-for="photo in photos" :key="photo.id"/>
+
     </div>
     <div v-else> 
       <div class="loader"></div>

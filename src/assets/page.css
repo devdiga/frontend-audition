@@ -10,38 +10,90 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 1100px) {
+  #title {
+    font-size: 64px;
+    max-height: 25vh;
+    background: rgb(9,9,121);
+    background: linear-gradient(90deg, rgba(9,9,121,1) 25%, rgba(0,127,226,1) 64%, rgba(2,0,36,1) 89%);
+    padding: 32px 64px;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #title .action-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  #title .action-container #search {
+    border-radius: 32px;
+    border: 0;
+    font-size: 32px;
+    padding: 0px 32px;
+    height: 100%;
+    margin-right: 32px;
+    width: 542px;
+  }
 
-#title {
-  font-size: 64px;
-  max-height: 25vh;
-  background: rgb(9,9,121);
-  background: linear-gradient(90deg, rgba(9,9,121,1) 25%, rgba(0,127,226,1) 64%, rgba(2,0,36,1) 89%);
-  padding: 32px 64px;
-  color: aliceblue;
-  display: flex;
-  justify-content: space-between;
+  #title .action-container svg {
+    height: 64px;
+    width: 64px;
+    fill: #808080;
+    margin-left: 16px;
+  }
 }
 
-#title .action-container {
-  display: flex;
-  align-items: center;
-}
 
-#title .action-container #search {
-  border-radius: 32px;
-  border: 0;
-  font-size: 32px;
-  padding: 0px 32px;
-  height: 100%;
-  margin-right: 32px;
-  width: 542px;
-}
+@media screen and (max-width: 576px) {
+  #title {
+    font-size: 21px;
+    max-height: 25vh;
+    background: rgb(9,9,121);
+    background: linear-gradient(90deg, rgba(9,9,121,1) 25%, rgba(0,127,226,1) 64%, rgba(2,0,36,1) 89%);
+    padding: 15px 21px;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #title .action-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  #title .action-container #search {
+    border-radius: 32px;
+    border: 0;
+    font-size: 15px;
+    padding: 10px 15px;
+    height: 50%;
+    margin-right: 15px;
+    width: 142px;
+  }
 
-#title .action-container svg {
-  height: 64px;
-  width: 64px;
-  fill: #808080;
-  margin-left: 16px;
+  #title .action-container #button-search {
+    height: 25px;
+    width: 25px;
+    padding: 0px 0px;
+    margin: 3px;
+  }
+  
+  #title .action-container #button-search #icon-search-big{
+    display: none;
+  }
+  #title .action-container #button-search #icon-search-min{
+    margin: 0px px;
+  }
+  
+  #title .action-container svg {
+    height: 25px;
+    width: 25px;
+    fill: #808080;
+    padding: 00px 0px;
+    margin-left: 0px;
+  }
 }
 
 #title .action-container svg:hover {
