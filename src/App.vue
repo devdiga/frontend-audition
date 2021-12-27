@@ -2,7 +2,7 @@
  <div class="body">
 
   <div id="title">
-    Photo Library {{typeFormat}}
+    Photo Library 
     <div class="action-container">
       <input id="search" v-model="search" type="text" placeholder="Busca" />
       <button class="button search-btn" @click="getFotos"> 
@@ -33,6 +33,9 @@
   </div>
     <div id="container" :class="typeFormat=='list'?'container-list':'container-grid'" v-if="mount">
         <photoCard :type="typeFormat" :photo="photo" v-for="photo in photos" :key="photo.id"/>
+    </div>
+    <div v-else> 
+      <div class="loader"></div>
     </div>
  </div>
 </template>
@@ -83,4 +86,23 @@ export default {
   .search-btn:hover{
     background-color: #2f855e; 
   }
+  .loader {
+      border: 16px solid #f3f3f3;
+      border-top: 16px solid #3498db;
+      border-radius: 50%;
+      left: 50%;
+      position: fixed;
+      z-index: 999;
+      overflow: show;
+      margin: auto;
+      margin-left: -4em;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
 </style>

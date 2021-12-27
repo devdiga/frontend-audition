@@ -14,8 +14,10 @@ body {
 #title {
   font-size: 64px;
   max-height: 25vh;
-  background: #d9d9d9;
+  background: rgb(9,9,121);
+  background: linear-gradient(90deg, rgba(9,9,121,1) 25%, rgba(0,127,226,1) 64%, rgba(2,0,36,1) 89%);
   padding: 32px 64px;
+  color: aliceblue;
   display: flex;
   justify-content: space-between;
 }
