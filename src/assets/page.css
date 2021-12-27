@@ -13,6 +13,7 @@ body {
 
 #title {
   font-size: 64px;
+  max-height: 25vh;
   background: #d9d9d9;
   padding: 32px 64px;
   display: flex;
@@ -52,6 +53,7 @@ body {
 #container {
   padding: 32px 0px;
   overflow-y: auto;
+  height: 75vh;
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;

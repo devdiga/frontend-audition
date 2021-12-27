@@ -1,8 +1,13 @@
 <template>
+ <div class="body">
+
   <div id="title">
     Photo Library
     <div class="action-container">
-      <input id="search" type="text" placeholder="Busca" />
+      <input id="search" v-model="search" type="text" placeholder="Busca" />
+      <button class="search-btn" @click="getFotos"> 
+        <i class="fas fa-search fa-3x"></i>
+      </button>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -23,15 +28,25 @@
       </svg>
     </div>
   </div>
-    <div id="container"></div>
+    <div id="container" v-if="mount">
+        <photoCard :photo="photo" v-for="photo in photos" :key="photo.id"/>
+    </div>
+ </div>
 </template>
 
 <script>
-import '/src/assets/page.css';
-import photoCard from './components/photoCard';
+import photoCard from './components/photoCard.vue';
 import axios from 'axios';
 export default {
   name: "App",
+  components:{
+    photoCard
+  },
+  data : () =>({
+    search:'',
+    mount:false,
+    photos:[],
+  }),
   mounted() {
     this.getFotos();
   },
@@ -40,10 +55,8 @@ export default {
       axios
         .get("https://jsonplaceholder.typicode.com/photos")
         .then((response) => {
-          const container = document.getElementById("container");
-          response.data.slice(0, 20).forEach((photo) => {
-            container.appendChild(photoCard(photo));
-          });
+          this.photos = response.data.filter(o=>o.title.includes(this.search))
+          this.mount =true
         })
         .catch((error) => {
           alert(error);
@@ -53,5 +66,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
+	@import '/src/assets/page.css';
+  .search-btn{
+    border-radius: 8px;
+    padding: 5px 5px;
+    margin-left: -10px;
+  }
 </style>
