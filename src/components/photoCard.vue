@@ -1,10 +1,11 @@
 <template>
   <div :class="type == 'list' ? 'photo-card-list' : 'photo-card-grid'">
  	<div class="image">
-    	<img :src="photo.url" />
+    	<img :src="type=='list'? photo.thumbnailUrl:photo.url" />
 	 </div>
     <div class="title">
-      {{ photo.title }}
+		<span v-html="type=='list'? 'Id : ' + photo.id +'<br> ':'<hr>' "></span>
+ 	    {{ photo.title }}
     </div>
   </div>
 </template>
