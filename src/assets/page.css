@@ -44,10 +44,15 @@ body {
 
 #title .action-container svg:hover {
   cursor: pointer;
+  fill: #2f855e;
 }
 
 #title .action-container svg.active {
   fill: #42b983;
+}
+
+#title .action-container svg.active:hover {
+  fill: #2f855e;
 }
 
 #container {

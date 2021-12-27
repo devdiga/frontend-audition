@@ -5,7 +5,7 @@
     Photo Library
     <div class="action-container">
       <input id="search" v-model="search" type="text" placeholder="Busca" />
-      <button class="search-btn" @click="getFotos"> 
+      <button class="button search-btn" @click="getFotos"> 
         <i class="fas fa-search fa-3x"></i>
       </button>
       <svg
@@ -70,7 +70,13 @@ export default {
 	@import '/src/assets/page.css';
   .search-btn{
     border-radius: 8px;
-    padding: 5px 5px;
-    margin-left: -10px;
+    padding: 10px 10px;
+    margin-left: -15px;
+    background-color: #d9d9d9; 
+    border: none;
+    cursor: pointer;
+  }
+  .search-btn:hover{
+    background-color: #2f855e; 
   }
 </style>
