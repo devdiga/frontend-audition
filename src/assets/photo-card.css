@@ -14,6 +14,12 @@
 
 .photo-card-grid img {
     max-width: 300px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.photo-card-grid img:hover {
+    opacity: 1
 }
 
 .photo-card-list .image {
@@ -22,7 +28,13 @@
 }
 
 .photo-card-list img {
-    display: block
+    display: block;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.photo-card-list img:hover {
+    opacity: 1
 }
 
 .photo-card-grid .title {
