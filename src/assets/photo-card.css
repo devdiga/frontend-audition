@@ -39,20 +39,36 @@
 
 .photo-card-grid .title {
     max-width: 300px;
+    font-family: "Garamond", Times, serif;
+    text-transform: full-width;
     margin-top: 16px;
     text-align: left;
     font-size: 32px;
 }
 
+.photo-card-grid .title:first-letter {
+    text-transform: uppercase;
+}
+
 .photo-card-list .title {
     text-align: left;
+    font-family: "Garamond", Times, serif;
     font-size: 32px;
+}
+
+.photo-card-list .title:first-letter {
+    text-transform: uppercase;
+}
+
+.photo-card-list .title p:first-letter {
+    text-transform: uppercase;
 }
 
 @media screen and (max-width: 716px) {
     .photo-card-list {
         padding: 32px 15px;
         text-align: left;
+        font-family: "Garamond", Times, serif;
         flex: 1;
         border-left: 1px solid black;
         border-bottom: 1px solid black;
@@ -60,6 +76,7 @@
     }
     .photo-card-list .title {
         text-align: left;
+        font-family: "Garamond", Times, serif;
         font-size: 20px;
     }
 }

@@ -5,7 +5,9 @@
     </div>
     <div class="title">
       <span v-html="type == 'list' ? 'Id : ' + photo.id + '<br> ' : ''"></span>
-      {{ photo.title }}
+      <p>
+        {{ photo.title }}
+      </p>
     </div>
   </div>
 </template>
