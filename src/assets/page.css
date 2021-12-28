@@ -185,7 +185,7 @@ body {
 
 @media screen and (max-width: 716px) {
     .container-grid {
-        padding: 32px 0px;
+        padding: 25px 0px;
         overflow-y: auto;
         height: 75vh;
         flex-grow: 1;
@@ -194,7 +194,7 @@ body {
         justify-content: center;
     }
     .container-list {
-        padding: 32px 0px;
+        padding: 25px 0px;
         overflow-y: auto;
         height: 75vh;
         flex-grow: 1;
