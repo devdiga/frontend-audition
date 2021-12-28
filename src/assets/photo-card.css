@@ -1,40 +1,38 @@
-.photo-card-grid{
-  padding: 32px 48px;
-  text-align: left;
+.photo-card-grid {
+    padding: 30px 25px;
+    text-align: left;
 }
 
-.photo-card-list{
-  padding: 32px 48px;
-  text-align: left;
-  flex: 1; 
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+.photo-card-list {
+    padding: 32px 48px;
+    text-align: left;
+    flex: 1;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .photo-card-grid img {
-  max-width: 300px;
+    max-width: 300px;
 }
 
 .photo-card-list .image {
-  float: left;
-  margin-right: 16px;
-
+    float: left;
+    margin-right: 16px;
 }
 
 .photo-card-list img {
-  display: block
+    display: block
 }
 
 .photo-card-grid .title {
-  max-width: 300px;
-  margin-top: 16px;
-  text-align: left;
-  font-size: 32px;
+    max-width: 300px;
+    margin-top: 16px;
+    text-align: left;
+    font-size: 32px;
 }
 
-
 .photo-card-list .title {
-  text-align: left;
-  font-size: 32px;
+    text-align: left;
+    font-size: 32px;
 }
