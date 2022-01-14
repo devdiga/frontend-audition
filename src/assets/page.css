@@ -83,3 +83,13 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+#message {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    font-size: 1rem;
+    justify-content: center;
+    align-content: center;  
+    color: #808080;
+  }
