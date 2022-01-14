@@ -1,10 +1,21 @@
 .photo-card {
   padding: 1rem 1.5rem;
   text-align: left;
+
+}
+
+.photo-card.list {
+  display: flex;
+  gap: 1.5rem;
+  align-content: space-evenly;
 }
 
 .photo-card img {
   max-width: 18.75rem;
+}
+
+.photo-card img.list {
+  max-width: 6.25rem;
 }
 
 .photo-card .title {
@@ -12,6 +23,12 @@
   margin-top: 0.5rem;
   text-align: left;
   font-size: 1rem;
+}
+
+.photo-card .title.list {
+  max-width: none;
+  margin-top: 0;
+  align-self: center;
 }
 
 #loadMore {

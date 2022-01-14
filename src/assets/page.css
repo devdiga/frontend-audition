@@ -77,19 +77,28 @@ body {
 
 #container {
   padding: 1rem 0;
-  overflow-y: auto;
-  flex-grow: 1;
+  overflow-y: auto;    
+}
+
+div.list {
+  display: inline;
+  justify-content: start;
+}
+
+div.default {
   display: flex;
+  flex-grow: 1;  
   flex-wrap: wrap;
-  justify-content: space-between;
+  align-content: space-between;
+  justify-content: space-evenly;
 }
 
 #message {
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: 100%;
-    font-size: 1rem;
-    justify-content: center;
-    align-content: center;  
-    color: #808080;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  font-size: 1rem;
+  justify-content: center;
+  align-content: center;  
+  color: #808080;
+}
