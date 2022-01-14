@@ -13,3 +13,26 @@
   text-align: left;
   font-size: 1rem;
 }
+
+#loadMore {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  font-size: 1rem;
+  justify-content: center;
+  align-content: center;  
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+#loadMore > button {
+  font-size: 1rem;
+  color: black;
+  background-color: #d9d9d9;
+  border-radius: 1rem;
+  border: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+  height: 2rem;
+}

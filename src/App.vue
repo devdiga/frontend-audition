@@ -12,11 +12,11 @@
   </div>
 </div>
 
-<PhotoCard :data='data' />
+<PhotoCard @loadMorePhotos='count += 20' :data='data' />
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import PhotoCard from './components/PhotoCard.vue'
   export default {
   name: 'App',
@@ -29,6 +29,7 @@ import PhotoCard from './components/PhotoCard.vue'
   setup () {
     const data = ref(null);
     const error = ref(null);
+    const count = ref(20);
 
     function fetchData() {        
         return fetch('http://jsonplaceholder.typicode.com/photos', {
@@ -49,7 +50,7 @@ import PhotoCard from './components/PhotoCard.vue'
             })
             .then(json => {
             // set the response data
-            data.value = json.slice(0,20);
+            data.value = json.slice(0,count.value);
             })
             .catch(err => {
             error.value = err;
@@ -64,12 +65,17 @@ import PhotoCard from './components/PhotoCard.vue'
         }
 
     onMounted(() => {
-        fetchData()        
+      fetchData()
+    });
+
+    watch(count, () => {
+      fetchData()
     });
 
     return {
         data,
-        error
+        error,
+        count
       };  
   }  
 }

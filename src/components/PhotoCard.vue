@@ -5,6 +5,9 @@
     <div class="title">{{photo.title}}</div>
   </div>
 </div>
+<div id="loadMore">
+    <button @click="$emit('loadMorePhotos')">carregar mais</button>
+</div>
 </template>
 
 <script>
