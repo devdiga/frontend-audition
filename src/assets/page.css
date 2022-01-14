@@ -1,3 +1,29 @@
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 100%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 150%;
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -12,9 +38,9 @@ body {
 }
 
 #title {
-  font-size: 64px;
+  font-size: 2rem;
   background: #d9d9d9;
-  padding: 32px 64px;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
 }
@@ -25,20 +51,20 @@ body {
 }
 
 #title .action-container #search {
-  border-radius: 32px;
+  border-radius: 1rem;
   border: 0;
-  font-size: 32px;
-  padding: 0px 32px;
+  font-size: 1rem;
+  padding: 0 1rem;
   height: 100%;
-  margin-right: 32px;
-  width: 542px;
+  margin-right: 1rem;
+  width: 16rem;
 }
 
 #title .action-container svg {
-  height: 64px;
-  width: 64px;
+  height: 2rem;
+  width: 2rem;
   fill: #808080;
-  margin-left: 16px;
+  margin-left: 1rem;
 }
 
 #title .action-container svg:hover {
@@ -50,7 +76,7 @@ body {
 }
 
 #container {
-  padding: 32px 0px;
+  padding: 1rem 0;
   overflow-y: auto;
   flex-grow: 1;
   display: flex;
