@@ -1,15 +1,55 @@
 .photo-card {
-  padding: 32px 48px;
+  padding: 1rem 1.5rem;
   text-align: left;
+
+}
+
+.photo-card.list {
+  display: flex;
+  gap: 1.5rem;
+  align-content: space-evenly;
 }
 
 .photo-card img {
-  max-width: 300px;
+  max-width: 18.75rem;
+}
+
+.photo-card img.list {
+  max-width: 6.25rem;
 }
 
 .photo-card .title {
-  max-width: 300px;
-  margin-top: 16px;
+  max-width: 18.75rem;
+  margin-top: 0.5rem;
   text-align: left;
-  font-size: 32px;
+  font-size: 1rem;
+}
+
+.photo-card .title.list {
+  max-width: none;
+  margin-top: 0;
+  align-self: center;
+}
+
+#loadMore {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  font-size: 1rem;
+  justify-content: center;
+  align-content: center;  
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+#loadMore > button {
+  font-size: 1rem;
+  color: black;
+  background-color: #d9d9d9;
+  border-radius: 1rem;
+  border: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+  height: 2rem;
 }
