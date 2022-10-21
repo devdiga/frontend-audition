@@ -10,9 +10,11 @@ let listStyleButton = document.querySelector("svg.list-mode");
 let cardStyleButton = document.querySelector("svg.card-mode");
 let loadedPhotos;
 
-
 // Controlador do indice de carregamento das imagens
 let index = 0;
+
+// Primeiro carregamento
+loadPhotos(index);
 
 // Evento para o botão de carregamento de mais imagens - Por enquanto, carregando de 20 em 20.
 loadMoreButton.addEventListener("click", () => {
@@ -31,7 +33,7 @@ listStyleButton.addEventListener("click", () => {
         loadedPhotos = document.querySelectorAll("div.photo-card");
         let container = document.querySelector("div#container");
         container.replaceChildren(convertCardsToList(loadedPhotos));
-        activateButton();
+        render();
     }
 })
 
@@ -40,17 +42,19 @@ cardStyleButton.addEventListener("click", () => {
     if (!cardStyleButton.classList.contains("active")) {   
         let container = document.querySelector("div#container");
         container.replaceChildren(...loadedPhotos);
-        activateButton();
+        render();
     }
 })
-
-// Primeiro carregamento
-loadPhotos(index);
 
 // Muda o botão ativo e ajusta a filtragem caso esteja ativada
 function activateButton(){
     cardStyleButton.classList.toggle("active");
     listStyleButton.classList.toggle("active");
-    filterPhotos(searchBar.value);
 }
+
+function render(){
+    activateButton();
+    filterPhotos(searchBar.value)
+}
+
 
