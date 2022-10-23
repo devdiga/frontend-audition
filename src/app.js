@@ -1,14 +1,11 @@
 import axios from 'axios';
 import '/src/assets/page.css';
-
-import photoCard from './components/photoCard';
+import { items, addHTML } from './functions/search.js'
 
 axios.get('https://jsonplaceholder.typicode.com/photos')
   .then((response) => {
-    const container = document.getElementById('container');
-    response.data.slice(0, 20).forEach((photo) => {
-      container.appendChild(photoCard(photo));
-    });
+    items.push(...response.data.slice(0, 30));
+    items.slice(0, 20).forEach((photo) => addHTML(photo));
   })
   .catch((error) => {
     alert(error);
