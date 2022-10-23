@@ -31,7 +31,11 @@
             </svg>
           </div>
         </div>
-        <PhotoCard :data="photos" />
+        <PhotoCard
+          :data="photos"
+          @wheel.passive="infiniteScroll"
+          @scroll="handleScroll"
+        />
       </div>
     </body>
   </html>
@@ -49,20 +53,68 @@ export default {
   data() {
     return {
       photos: null,
+      photosForFetch: 20,
+      pages: 1,
+      waitScroll: false,
+      infinite: true,
     };
   },
   methods: {
     fetchData() {
       axios
         .get("https://jsonplaceholder.typicode.com/photos")
-        .then((r) => (this.photos = r.data))
+        .then(
+          (r) =>
+            (this.photos = r.data.filter(
+              (photo) => photo.id <= this.photosToView
+            ))
+        )
         .catch((error) => {
           alert(error);
         });
     },
+    infiniteScroll() {
+      if (this.infinite) {
+        const scrolling =
+          document.body.scrollHeight -
+          window.scrollY -
+          Math.max(document.body.offsetHeight, window.innerHeight) * 1.01;
+        /* console.log(
+          "scroll " +
+            window.scrollY +
+            " scrollHeight " +
+            document.body.scrollHeight +
+            " offsetHeight " +
+            document.body.offsetHeight +
+            " innerHeight " +
+            window.innerHeight
+        ); */
+        if (scrolling < 0 && !this.waitScroll) {
+          this.pages++;
+          this.waitScroll = true;
+          console.log("funcionou");
+          this.fetchData();
+          setTimeout(() => {
+            this.waitScroll = false;
+          }, 500);
+        }
+      }
+    },
+    handleScroll() {
+      this.infiniteScroll();
+    },
+  },
+  computed: {
+    photosToView() {
+      return this.photosForFetch * this.pages;
+    },
   },
   created() {
     this.fetchData();
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  unmounted() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
