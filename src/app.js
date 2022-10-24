@@ -20,6 +20,13 @@ loadPhotos(index);
 loadMoreButton.addEventListener("click", async () => {
     index += 20;
     await loadPhotos(index);
+    
+    if (listStyleButton.classList.contains("active")) {
+        loadedPhotos = [...loadedPhotos, ...document.querySelectorAll("div.photo-card")];
+        let container = document.querySelector("div#container");
+        container.replaceChildren(convertCardsToList(loadedPhotos));
+    }
+    
     filterPhotos(searchBar.value);
 })
 
