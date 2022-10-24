@@ -1,4 +1,5 @@
 import '../assets/photo-card.css';
+import '../assets/photo-list.css';
 
 export default function photoCard(item) {
   const img = document.createElement('img');

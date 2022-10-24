@@ -1,0 +1,34 @@
+ul {
+    padding: 0px;
+    width: 100%;
+}
+
+.photo-list-item {
+    align-items: center;
+    padding: 32px 32px;
+    text-align: left;
+    box-shadow: inset 0px 0px 5px 2px rgba(191,191,191,1);
+    margin-bottom: 5px;
+    list-style: none;  
+    font-size: 32px; 
+  }
+  
+  .photo-list-item img {
+    max-width: 300px;
+    border: 1px solid black;
+    margin: 0px 32px;
+  }
+  
+  .photo-list-item .title {
+    display: flex;
+    flex-grow: 2;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 600px) {
+    .photo-list-item .title{
+      font-size: 24px;
+    }
+  }
+  

@@ -44,17 +44,23 @@ body {
 }
 
 #title .action-container .action-container svg:hover {
+  fill: #37DE64;
+  box-shadow: inset 0px 0px 10px 0px #648F7C;
   cursor: pointer;
+  border-radius: 8px;
+  background-color: #113610;
 }
 
 #title .action-container .action-container svg.active {
   fill: #42b983;
-  border-color: #42b983;
+  pointer-events:none;
 }
 
-#title .action-container .action-container svg.more {
-  padding-left: 16px;
-  border-left: 2px solid gray;
+#title .action-container .action-container svg.more{
+  padding: 8px;
+  width: 48px;
+  height: 48px;
+  margin-left: 16px;
 }
 
 #container {
@@ -99,14 +105,14 @@ body {
     padding: 5px;
     margin: 16px 0px -16px 0px;
     border: 1px solid gray;
-    border-radius: 20px;
+    border-radius: 8px;
     height: 32px;
   }
 
   #title .action-container .action-container svg.more {
-    border: 1px solid gray;
+    height: 32px;
+    width: 64px;
     padding: 5px;
-  }
-
-  
+    margin-left: 0px
+  }  
 }
