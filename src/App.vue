@@ -36,6 +36,7 @@
           @wheel.passive="infiniteScroll"
           @scroll="handleScroll"
         />
+        <DataLoading v-if="loading" />
       </div>
     </body>
   </html>
@@ -43,12 +44,14 @@
 
 <script>
 import axios from "axios";
+import DataLoading from "./components/DataLoading.vue";
 import PhotoCard from "./components/PhotoCard.vue";
 
 export default {
   name: "App",
   components: {
     PhotoCard,
+    DataLoading,
   },
   data() {
     return {
@@ -57,18 +60,17 @@ export default {
       pages: 1,
       waitScroll: false,
       infinite: true,
+      loading: true,
     };
   },
   methods: {
     fetchData() {
       axios
         .get("https://jsonplaceholder.typicode.com/photos")
-        .then(
-          (r) =>
-            (this.photos = r.data.filter(
-              (photo) => photo.id <= this.photosToView
-            ))
-        )
+        .then((r) => {
+          this.photos = r.data.filter((photo) => photo.id <= this.photosToView);
+          this.loading = false;
+        })
         .catch((error) => {
           alert(error);
         });
@@ -79,21 +81,11 @@ export default {
           document.body.scrollHeight -
           window.scrollY -
           Math.max(document.body.offsetHeight, window.innerHeight) * 1.01;
-        /* console.log(
-          "scroll " +
-            window.scrollY +
-            " scrollHeight " +
-            document.body.scrollHeight +
-            " offsetHeight " +
-            document.body.offsetHeight +
-            " innerHeight " +
-            window.innerHeight
-        ); */
         if (scrolling < 0 && !this.waitScroll) {
+          this.loading = true;
           this.pages++;
           this.waitScroll = true;
-          console.log("funcionou");
-          this.fetchData();
+          setTimeout(() => this.fetchData(), 500);
           setTimeout(() => {
             this.waitScroll = false;
           }, 500);

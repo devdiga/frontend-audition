@@ -6,8 +6,8 @@
     </div>
   </div>
 </template>
-
-<script>
+  
+  <script>
 export default {
   name: "PhotoCard",
   props: {
@@ -15,7 +15,7 @@ export default {
   },
 };
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+  <!-- Add "scoped" attribute to limit CSS to this component only -->
+  <style>
 @import "../assets/photo-card.css";
 </style>
