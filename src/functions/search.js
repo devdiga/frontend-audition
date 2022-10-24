@@ -1,8 +1,6 @@
-import photoCard from '../components/photoCard';
+import { addHTML, items } from "../components/photoCard.js";
 const content = document.getElementById("container");
 const inputSearch = document.getElementById("search");
-
-let items = [];
 
 inputSearch.oninput = () => {
   content.innerHTML = "";
@@ -12,9 +10,3 @@ inputSearch.oninput = () => {
     )
     .forEach((item) => addHTML(item));
 };
-
-const addHTML = (item) => {
-  container.appendChild(photoCard(item))
-}
-
-export { items, addHTML }

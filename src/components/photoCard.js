@@ -1,6 +1,6 @@
 import '../assets/photo-card.css';
 
-export default function photoCard(item) {
+function photoCard(item) {
   const img = document.createElement('img');
   img.src = item.url;
   const txt = document.createElement('div');
@@ -12,3 +12,9 @@ export default function photoCard(item) {
   card.appendChild(txt);
   return card;
 }
+const addHTML = (item) => {
+  container.appendChild(photoCard(item))
+}
+let items = []
+export { addHTML, items };
+
