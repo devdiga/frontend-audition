@@ -17,9 +17,10 @@ let index = 0;
 loadPhotos(index);
 
 // Evento para o botão de carregamento de mais imagens - Por enquanto, carregando de 20 em 20.
-loadMoreButton.addEventListener("click", () => {
+loadMoreButton.addEventListener("click", async () => {
     index += 20;
-    loadPhotos(index);
+    await loadPhotos(index);
+    filterPhotos(searchBar.value);
 })
 
 // Evento para a barra de pesquisa
@@ -39,7 +40,7 @@ listStyleButton.addEventListener("click", () => {
 
 // Evento botão visualiação em cards
 cardStyleButton.addEventListener("click", () => {
-    if (!cardStyleButton.classList.contains("active")) {   
+    if (!cardStyleButton.classList.contains("active")) {
         let container = document.querySelector("div#container");
         container.replaceChildren(...loadedPhotos);
         render();
@@ -47,12 +48,13 @@ cardStyleButton.addEventListener("click", () => {
 })
 
 // Muda o botão ativo e ajusta a filtragem caso esteja ativada
-function activateButton(){
+function activateButton() {
     cardStyleButton.classList.toggle("active");
     listStyleButton.classList.toggle("active");
 }
 
-function render(){
+// Atualiza a tela
+function render() {
     activateButton();
     filterPhotos(searchBar.value)
 }
