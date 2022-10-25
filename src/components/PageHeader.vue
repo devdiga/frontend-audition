@@ -1,14 +1,11 @@
 <template>
   <div id="title">
-    Photo Library
+    Photo Library {{}}
     <div class="action-container">
-      <input
-        id="search"
-        type="search"
-        placeholder="Busca"
-        v-model="searchText"
-        @input="search"
-      />
+      <input id="search" type="search" placeholder="Busca" v-model="text" />
+      <!-- @input="setText(text)" -->
+      <!--  {{ textoRef.value }}
+      {{ textoAtualizado } -->}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -40,25 +37,25 @@
 </template>
 
 <script>
+import { data } from "./PageHeader.js";
+
 export default {
   name: "PageHeader",
   data() {
     return {
-      photosFilter: this.searchFilter,
-      searchText: "",
       displayPattern: true,
+      data,
+      text: null,
     };
   },
-  props: {
-    ["searchFilter"]: String,
-  },
-  emits: ["update:searchText", "update:searchFilter"],
   methods: {
-    search() {
-      this.$emit("update:searchFilter", this.searchText);
-    },
     changeDisplayPattern() {
       this.displayPattern = !this.displayPattern;
+    },
+  },
+  watch: {
+    text() {
+      data.value = this.text;
     },
   },
 };
