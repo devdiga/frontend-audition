@@ -1,33 +1,34 @@
 <template>
-  <!-- <PageHeader v-show="show" @porra="onPorra" /> -->
-  <div
-    id="container"
-    v-if="updatedPhotocardDisplay.value"
-    @wheel.passive="infiniteScroll"
-    @scroll="handleScroll"
-  >
-    <div class="photo-card" v-for="photo in photos" :key="photo.id">
-      <img :src="photo.url" :alt="photo.title" />
-      <div class="title">{{ photo.title }}</div>
-    </div>
-  </div>
-
-  <div
-    id="container"
-    :class="{ list: !updatedPhotocardDisplay.value }"
-    v-else
-    @wheel.passive="infiniteScroll"
-    @scroll="handleScroll"
-  >
-    <div class="photo-card" v-for="photo in photos" :key="photo.id">
-      <img :src="photo.thumbnailUrl" :alt="photo.title" />
-      <div class="title">
-        <span>{{ photo.id }}: </span>
-        <p>{{ photo.title }}</p>
+  <main>
+    <div
+      id="container"
+      v-if="updatedPhotocardDisplay.value"
+      @wheel.passive="infiniteScroll"
+      @scroll="handleScroll"
+    >
+      <div class="photo-card" v-for="photo in photos" :key="photo.id">
+        <img :src="photo.url" :alt="photo.title" />
+        <div class="title">{{ photo.title }}</div>
       </div>
     </div>
-  </div>
-  <DataLoading v-if="loading" />
+
+    <div
+      id="container"
+      :class="{ list: !updatedPhotocardDisplay.value }"
+      v-else
+      @wheel.passive="infiniteScroll"
+      @scroll="handleScroll"
+    >
+      <div class="photo-card" v-for="photo in photos" :key="photo.id">
+        <img :src="photo.thumbnailUrl" :alt="photo.title" />
+        <div class="title">
+          <span>id : {{ photo.id }} </span>
+          <p>{{ photo.title }}</p>
+        </div>
+      </div>
+    </div>
+    <DataLoading v-if="loading" />
+  </main>
 </template>
   
   <script>

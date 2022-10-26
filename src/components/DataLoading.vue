@@ -39,7 +39,7 @@ h2 {
   height: 1.4rem;
   margin: 0.2rem;
   background: #d9d9d9;
-  border-radius: 1rem;
+  border-radius: 50%;
   animation: loading 1s infinite alternate;
 }
 .loading span:nth-of-type(2) {
