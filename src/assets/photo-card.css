@@ -13,6 +13,7 @@
 }
 
 .photo-card img {
+  cursor: pointer;
   max-width: 300px;
   border: 1px solid black;
 }

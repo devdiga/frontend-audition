@@ -20,13 +20,12 @@ loadPhotos(index);
 loadMoreButton.addEventListener("click", async () => {
     index += 20;
     await loadPhotos(index);
-    
+
     if (listStyleButton.classList.contains("active")) {
         loadedPhotos = [...loadedPhotos, ...document.querySelectorAll("div.photo-card")];
         let container = document.querySelector("div#container");
         container.replaceChildren(convertCardsToList(loadedPhotos));
     }
-    
     filterPhotos(searchBar.value);
 })
 
@@ -60,10 +59,8 @@ function activateButton() {
     listStyleButton.classList.toggle("active");
 }
 
-// Atualiza a tela
+// Atualiza a tela/informa os dados no caso de mudanças nos botões, filtragem, ou abertura da imagem.
 function render() {
     activateButton();
-    filterPhotos(searchBar.value)
+    filterPhotos(searchBar.value);
 }
-
-

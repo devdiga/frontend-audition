@@ -1,5 +1,6 @@
 import axios from 'axios';
 import photoCard from '../components/photoCard';
+import createModals from '../utils/createModals';
 
 export default function loadPhotos(index = 0, quantity = 20) {
 
@@ -10,6 +11,7 @@ export default function loadPhotos(index = 0, quantity = 20) {
         response.data.slice(index, (index + quantity)).forEach((photo) => {
           container.appendChild(photoCard(photo));
         });
+        createModals();
         resolve();
       },
       (error) => {
