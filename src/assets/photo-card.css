@@ -13,3 +13,18 @@
   text-align: left;
   font-size: 32px;
 }
+
+#container.list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#container.list .photo-card {
+  display: flex;
+}
+
+#container.list .photo-card .title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

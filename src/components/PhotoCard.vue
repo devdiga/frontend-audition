@@ -1,9 +1,30 @@
 <template>
   <!-- <PageHeader v-show="show" @porra="onPorra" /> -->
-  <div id="container" @wheel.passive="infiniteScroll" @scroll="handleScroll">
+  <div
+    id="container"
+    v-if="updatedPhotocardDisplay.value"
+    @wheel.passive="infiniteScroll"
+    @scroll="handleScroll"
+  >
     <div class="photo-card" v-for="photo in photos" :key="photo.id">
       <img :src="photo.url" :alt="photo.title" />
       <div class="title">{{ photo.title }}</div>
+    </div>
+  </div>
+
+  <div
+    id="container"
+    :class="{ list: !updatedPhotocardDisplay.value }"
+    v-else
+    @wheel.passive="infiniteScroll"
+    @scroll="handleScroll"
+  >
+    <div class="photo-card" v-for="photo in photos" :key="photo.id">
+      <img :src="photo.thumbnailUrl" :alt="photo.title" />
+      <div class="title">
+        <span>{{ photo.id }}: </span>
+        <p>{{ photo.title }}</p>
+      </div>
     </div>
   </div>
   <DataLoading v-if="loading" />
@@ -12,7 +33,7 @@
   <script>
 import axios from "axios";
 import DataLoading from "./DataLoading.vue";
-import { textoAtualizado } from "./PageHeader.js";
+import { updatedSearchText, updatedPhotocardDisplay } from "./PageHeader.js";
 
 export default {
   name: "PhotoCard",
@@ -27,7 +48,8 @@ export default {
       pages: 1,
       waitScroll: false,
       loading: true,
-      textoAtualizado,
+      updatedSearchText,
+      updatedPhotocardDisplay,
     };
   },
   methods: {
@@ -39,7 +61,7 @@ export default {
             if (
               item.title
                 .toLowerCase()
-                .startsWith(this.textoAtualizado.toLowerCase())
+                .startsWith(this.updatedSearchText.toLowerCase())
             ) {
               return item;
             }
@@ -55,7 +77,6 @@ export default {
     },
 
     infiniteScroll() {
-      console.log(this.textoAtualizado);
       if (this.photosToView < this.photosTotal) {
         const scrolling =
           document.body.scrollHeight -
@@ -89,7 +110,7 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   watch: {
-    textoAtualizado() {
+    updatedSearchText() {
       this.fetchData();
     },
   },

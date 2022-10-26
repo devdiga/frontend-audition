@@ -1,16 +1,13 @@
 <template>
   <div id="title">
-    Photo Library {{}}
+    Photo Library
     <div class="action-container">
       <input id="search" type="search" placeholder="Busca" v-model="text" />
-      <!-- @input="setText(text)" -->
-      <!--  {{ textoRef.value }}
-      {{ textoAtualizado } -->}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        :class="{ active: displayPattern }"
-        @click="changeDisplayPattern"
+        :class="{ active: gridPattern }"
+        @click="changePattern(gridPattern)"
       >
         <g fill-rule="evenodd">
           <path d="M0 0h24v24H0z" fill="none" />
@@ -22,8 +19,8 @@
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        :class="{ active: !displayPattern }"
-        @click="changeDisplayPattern"
+        :class="{ active: listPattern }"
+        @click="changePattern(listPattern)"
       >
         <path d="M0 0h24v24H0V0z" fill="none" />
         <path
@@ -37,25 +34,32 @@
 </template>
 
 <script>
-import { data } from "./PageHeader.js";
+import { searchText, photocardDisplay } from "./PageHeader.js";
 
 export default {
   name: "PageHeader",
   data() {
     return {
       displayPattern: true,
-      data,
+      gridPattern: true,
+      listPattern: false,
+      searchText,
+      photocardDisplay,
       text: null,
     };
   },
   methods: {
-    changeDisplayPattern() {
-      this.displayPattern = !this.displayPattern;
+    changePattern(value) {
+      if (!value) {
+        this.gridPattern = !this.gridPattern;
+        this.listPattern = !this.listPattern;
+        photocardDisplay.value = this.gridPattern;
+      }
     },
   },
   watch: {
     text() {
-      data.value = this.text;
+      searchText.value = this.text;
     },
   },
 };

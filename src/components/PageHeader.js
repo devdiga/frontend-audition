@@ -1,5 +1,9 @@
 import { ref, computed } from 'vue'
 
-export const data = ref("")
+export const searchText = ref("")
 
-export const textoAtualizado = computed(() => data.value)
+export const updatedSearchText = computed(() => searchText.value)
+
+export const photocardDisplay = ref(true)
+
+export const updatedPhotocardDisplay = computed(() => ref(photocardDisplay.value))
