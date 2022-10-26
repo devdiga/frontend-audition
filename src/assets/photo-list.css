@@ -1,6 +1,8 @@
 ul {
     padding: 0px;
-    width: 100%;
+    width: 95%;
+    display:flex;
+    flex-direction: column;
 }
 
 .photo-list-item {
@@ -20,6 +22,10 @@ ul {
     transition: 250ms;
     filter: none;
   }
+
+  .photo-list-item span:first-of-type{
+    width: 100px;
+  }
   
   .photo-list-item img {
     max-width: 300px;
@@ -35,8 +41,25 @@ ul {
   }
   
   @media (max-width: 600px) {
+    .photo-list-item{
+      padding: 12px 12px;
+    }
+
+    .photo-list-item span:first-of-type{
+      width: fit-content;
+    }
+
+    .photo-list-item span{
+      font-size: 12px;
+    }
+
     .photo-list-item .title{
-      font-size: 24px;
+      font-size: 14px;
+    }
+
+    .photo-list-item img{
+      margin: 0px 12px;
+      max-width: 150px;
     }
   }
   
