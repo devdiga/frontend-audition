@@ -14,16 +14,29 @@ body {
 
 #title {
   font-size: 64px;
-  background: #d9d9d9;
+  background: #106CD3;
+  color: white;
   padding: 32px 64px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid #0084FF;
+}
+
+#title span{
+  padding-left: 30px;
+  flex-grow: 1;
 }
 
 #title .action-container {
   display: flex;
   align-items: center;
+}
+
+#title svg {
+  height: 64px;
+  width: 64px;
+  fill: #EEF1F6;
+  margin: 0px;
 }
 
 #title .action-container #search {
@@ -36,23 +49,27 @@ body {
   width: 542px;
 }
 
+#title .action-container #search:focus{
+  outline: none;
+  box-shadow: inset 0px 0px 3px 1px #0084FF;  
+}
+
 #title .action-container .action-container svg {
   height: 64px;
   width: 64px;
-  fill: #808080;
+  fill: #EEF1F6;
   margin-left: 16px;
 }
 
 #title .action-container .action-container svg:hover {
-  fill: #37DE64;
-  box-shadow: inset 0px 0px 10px 0px #648F7C;
+  box-shadow: inset 0px 0px 10px 0px #106CD3;
   cursor: pointer;
   border-radius: 8px;
-  background-color: #113610;
+  background-color: #0084FF;
 }
 
 #title .action-container .action-container svg.active {
-  fill: #42b983;
+  fill: #F27501;
   pointer-events:none;
 }
 
@@ -72,6 +89,7 @@ body {
   justify-content: space-around;
   align-self: center;
   width: 100%;
+  background-color: #EEF1F6;
 }
 
 @media (max-width: 600px)
