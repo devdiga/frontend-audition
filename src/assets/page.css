@@ -35,7 +35,7 @@ body {
 #title svg {
   height: 64px;
   width: 64px;
-  fill: url(#header-shape-gradient) #fff;;
+  fill: #EEF1F6;;
   margin: 0px;
 }
 
@@ -75,6 +75,8 @@ body {
 
 #title .action-container .action-container svg.active {
   fill: #F27501;
+  border-radius: 8px;
+  background-color: #0084FF;
   pointer-events:none;
 }
 
@@ -83,6 +85,13 @@ body {
   width: 48px;
   height: 48px;
   margin-left: 16px;
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 #container {
@@ -168,3 +177,4 @@ body {
     margin-left: 0px
   }  
 }
+
