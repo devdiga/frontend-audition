@@ -35,8 +35,13 @@ body {
 #title svg {
   height: 64px;
   width: 64px;
-  fill: #EEF1F6;
+  fill: url(#header-shape-gradient) #fff;;
   margin: 0px;
+}
+
+#header-shape-gradient {
+  --color-stop: #f12c06;
+  --color-bot: #faed34;
 }
 
 #title .action-container #search {
@@ -103,13 +108,21 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.626);
-  align-content: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
 }
 
 .modal #modal-image {
   width: 600px;
   height: 600px;
+}
+
+.modal #modal-title {
+  color: white;
+  margin-top: 10px;
+  font-size: 64px;
 }
 
 @media (max-width: 600px)
