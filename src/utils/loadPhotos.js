@@ -7,7 +7,6 @@ let index = 0;
 export default async function loadPhotos(quantity = 4) {
   if (index > 0) {
     quantity = await askQuantity();
-    quantity = Number(quantity)
   }
 
   return new Promise(function (resolve, reject) {
@@ -30,6 +29,18 @@ export default async function loadPhotos(quantity = 4) {
 
 function askQuantity() {
   return new Promise(function (resolve) {
-    resolve(prompt('Quantas imagens deseja carregar?'))
+    let quantity;
+    do {
+      quantity = prompt("Quantas imagens deseja carregar?");
+      if (quantity.match(/\D/gm)){
+        alert("Valor inválido, digite um número inteiro!");
+      } else if ((quantity.length == 0)){
+        quantity = 0;
+      } else {
+        quantity = Number(quantity);
+      }
+    } while (typeof(quantity) != 'number')
+    alert(`Carregando ${quantity} novas fotos.`)
+    resolve(quantity)
   })
 }
