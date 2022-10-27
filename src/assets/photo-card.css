@@ -5,6 +5,7 @@
   border-radius: 8px;
   background-color: white;
   filter: grayscale();
+  height: 500px;
 }
 
 .photo-card:hover{

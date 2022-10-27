@@ -1,8 +1,14 @@
 import axios from 'axios';
 import photoCard from '../components/photoCard';
-import createModals from '../utils/createModals';
+import createModals from '../components/createModals';
 
-export default function loadPhotos(index = 0, quantity = 20) {
+let index = 0;
+
+export default async function loadPhotos(quantity = 4) {
+  if (index > 0) {
+    quantity = await askQuantity();
+    quantity = Number(quantity)
+  }
 
   return new Promise(function (resolve, reject) {
     axios.get('https://jsonplaceholder.typicode.com/photos').then(
@@ -11,6 +17,7 @@ export default function loadPhotos(index = 0, quantity = 20) {
         response.data.slice(index, (index + quantity)).forEach((photo) => {
           container.appendChild(photoCard(photo));
         });
+        index += quantity;
         createModals();
         resolve();
       },
@@ -19,4 +26,10 @@ export default function loadPhotos(index = 0, quantity = 20) {
       }
     );
   });
+}
+
+function askQuantity() {
+  return new Promise(function (resolve) {
+    resolve(prompt('Quantas imagens deseja carregar?'))
+  })
 }
