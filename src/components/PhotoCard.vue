@@ -28,6 +28,10 @@
       </div>
     </div>
     <DataLoading v-if="loading" />
+    <div v-if="photosTotal == 0" id="failSearch">
+      Sua pesquisa - <span>{{ updatedSearchText }}</span> - não encontrou nenhum
+      imagem.
+    </div>
   </main>
 </template>
   
