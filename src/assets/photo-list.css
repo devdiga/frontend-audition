@@ -30,6 +30,7 @@ ul {
   .photo-list-item img {
     max-width: 300px;
     border: 1px solid black;
+    cursor:zoom-in;
     margin: 0px 32px;
   }
   

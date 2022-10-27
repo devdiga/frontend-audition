@@ -1,6 +1,7 @@
 import loadPhotos from './utils/loadPhotos'
 import filterPhotos from './utils/filterPhotos'
 import convertCardsToList from './utils/convertCardsToList';
+import createModals from './utils/createModals';
 import '/src/assets/page.css';
 
 // Seletores de elementos
@@ -25,7 +26,9 @@ loadMoreButton.addEventListener("click", async () => {
         loadedPhotos = [...loadedPhotos, ...document.querySelectorAll("div.photo-card")];
         let container = document.querySelector("div#container");
         container.replaceChildren(convertCardsToList(loadedPhotos));
+        createModals();
     }
+    
     filterPhotos(searchBar.value);
 })
 
@@ -40,6 +43,7 @@ listStyleButton.addEventListener("click", () => {
         loadedPhotos = document.querySelectorAll("div.photo-card");
         let container = document.querySelector("div#container");
         container.replaceChildren(convertCardsToList(loadedPhotos));
+        createModals();
         render();
     }
 })

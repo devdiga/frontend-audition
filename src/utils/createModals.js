@@ -14,11 +14,20 @@ function openModal(event) {
 }
 
 function showModalImage(event){
-    document.getElementById("modal-image").setAttribute("src", event.target.attributes[0].value)
-    document.getElementById("modal-title").innerText = event.target.nextElementSibling.innerText;
+    let modalImage = document.getElementById("modal-image");
+    let modalTitle = document.getElementById("modal-title");
+
+    modalImage.setAttribute("src", event.target.attributes[0].value)
+    modalTitle.innerText = event.target.nextElementSibling.innerText;
+
+    if(document.querySelector("svg.list-mode").classList.contains("active")){
+        modalImage.style.width = "150px"
+    } else {
+        modalImage.style.width = "600px"
+    }  
 }
 
-// Fechamento do Modal com a imagem.
+// Fechamento do Modal
 (function() {
     document.getElementById("modal").addEventListener("click", () => {
         document.getElementById("modal").style.display = "none";

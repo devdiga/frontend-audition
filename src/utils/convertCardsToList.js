@@ -17,6 +17,7 @@ function conversor(card, index){
 
     let imgThumb = document.createElement("img");
     imgThumb.setAttribute("src", card.querySelector("img").getAttribute("src").replace(/\/600\//,"/150/"));
+    imgThumb.className = "photos"
 
     let title = document.createElement("span");
     title.className = "title"
