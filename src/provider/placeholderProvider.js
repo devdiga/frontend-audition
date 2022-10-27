@@ -1,14 +1,14 @@
 import axios from "axios";
-import { addHTML, items } from "../components/photoCard.js";
+import { items } from "../components/photoCard.js";
+import { populateList } from "../functions/menu.js";
 
 let limit = 12
 
-
-async function getPost(page) {
+async function getPost(page, isListView = false) {
   axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=${limit}&_page=${page}`)
     .then((response) => {
       items.push(...response.data);
-      items.forEach((photo) => addHTML(photo));
+      populateList(isListView)
     })
     .catch((error) => {
       alert(error);

@@ -7,6 +7,7 @@ var myDiv = document.getElementById('container');
 myDiv.addEventListener("scroll", myPageScroll);
 
 function myPageScroll() {
+  const isListView = myDiv.className === "container-list";
   var myScrollTop = myDiv.scrollTop;
 
   var myScrollHeight = myDiv.scrollHeight;
@@ -17,6 +18,6 @@ function myPageScroll() {
 
   if (diff == height) {
     page++
-    getPost(page)
+    getPost(page, isListView)
   }
 }

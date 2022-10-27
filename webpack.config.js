@@ -8,6 +8,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.bundle.js',
   },
+  resolve: {
+    fallback: { util: false }
+  },
   module: {
     rules: [
       {

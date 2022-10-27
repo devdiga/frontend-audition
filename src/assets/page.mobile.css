@@ -1,0 +1,56 @@
+/* CSS RESPONSIVO */
+
+@media only screen and (max-device-width: 900px) {
+
+  #title {
+    font-size: 35px;
+    background: #d9d9d9;
+    padding: 32px 32px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #title .action-container #search {
+    font-size: 20px;
+    padding: 0px 30px;
+    margin-right: 6px;
+    margin-left: 10px;
+  }
+
+  #title .action-container svg {
+    height: 40px;
+    width: 40px;
+  }
+
+  #container {
+    padding: 32px 50px;
+  }
+}
+
+@media only screen and (max-device-width: 390px) {
+
+  #title {
+    font-size: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #title .action-container #search {
+    font-size: 20px;
+    padding: 0px 30px;
+    margin-right: 6px;
+    margin-left: 10px;
+    width: 160px;
+  }
+
+  #title .action-container svg {
+    height: 40px;
+    width: 40px;
+  }
+
+  #container {
+    padding: 32px 50px;
+  }
+}

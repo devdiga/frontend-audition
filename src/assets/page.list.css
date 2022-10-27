@@ -1,0 +1,9 @@
+.container-list {
+  padding: 32px 0px;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  flex-direction: column;
+}

@@ -13,3 +13,21 @@
   text-align: left;
   font-size: 32px;
 }
+
+@media only screen and (max-device-width: 450px) {
+  .photo-card {
+    padding: 0px;
+    text-align: center;
+  }
+
+  .photo-card .title {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .photo-card img {
+    max-width: 200px;
+  }
+}
