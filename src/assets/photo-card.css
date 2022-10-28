@@ -1,15 +1,37 @@
-.photo-card {
-  padding: 32px 48px;
+.photo-card-grid {
+  padding: 30px 25px;
   text-align: left;
 }
 
-.photo-card img {
+.photo-card-grid img {
   max-width: 300px;
 }
 
-.photo-card .title {
+.photo-card-grid .title {
   max-width: 300px;
   margin-top: 16px;
-  text-align: left;
+  text-align: center;
   font-size: 32px;
+}
+
+.photo-card-grid .title:first-letter {
+  text-transform: uppercase;
+}
+
+.photo-card-list {
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.photo-card-list img {
+  max-width: 300px;
+}
+
+.photo-card-list .title {
+  max-width: 100%;
+  font-size: 32px;
+  margin-left: 30px; 
 }
