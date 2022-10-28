@@ -7,3 +7,11 @@
   align-items: baseline;
   flex-direction: column;
 }
+
+.container-list .photo-card .title {
+  margin-top: 0px;
+}
+
+.container-list .photo-card {
+  padding: 10px 0px 10px 40px;
+}

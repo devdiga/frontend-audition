@@ -32,16 +32,11 @@
   #title {
     font-size: 20px;
     padding: 20px;
-    display: flex;
     align-items: flex-start;
     flex-direction: column;
   }
 
   #title .action-container #search {
-    font-size: 20px;
-    padding: 0px 30px;
-    margin-right: 6px;
-    margin-left: 10px;
     width: 160px;
   }
 
