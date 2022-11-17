@@ -3,19 +3,21 @@
 ### Introdução ###
 
 ![preview](./preview.png)
-(resolução: 1920x1080px)
+(resolução: 1366x768px)
 
-O projeto consiste de uma biblioteca de fotos, com uma única página para a exibição dos dados.
+O projeto consiste em uma biblioteca de fotos, com uma única página para a exibição dos dados.
 
-A partir do código existente, o candidato deverá implementar as funcionalidades propostas e gerar o pacote de distribuição do projeto, abrindo um pull request no repositório de código contendo os arquivos fonte e o pacote de distribuição.
+A partir do código existente, o candidato deverá implementar as funcionalidades propostas, abrindo um pull request no 
+repositório de código contendo os código-fontes e o arquivo README.md contendo instruções de como rodar o projeto e 
+quaisquer outras observações que julgar necessário.
 
 ### Estrutura: ###
 
-O projeto foi desenvolvido com HTML, CSS e JavaScript.
+O projeto foi desenvolvido utilizando os frameworks Vue-js v3.x e Vuetify 3.
 
-Gerenciador de pacotes: [NPM](https://docs.npmjs.com/)
+Gerenciador de pacotes: [Yarn](https://yarnpkg.com/)
 
-Empacotador (para distribuição): [Webpack](https://webpack.js.org/concepts/)
+Ferramenta de build: [Vite](https://vitejs.dev/)
 
 ### API: ###
 
@@ -37,9 +39,9 @@ Formato do retorno:
 
 2) Clone o repositório para a sua máquina local;
 
-3) Instale o NPM (caso ainda não tiver);
+3) Instale o Yarn (caso não esteja instalado);
 
-4) Rode `npm install` pelo prompt de comando na pasta do projeto;
+4) Rode `yarn install` pelo prompt de comando na pasta do projeto;
 
 5) Abra um pull request para entregar o teste.
 
@@ -47,33 +49,45 @@ Formato do retorno:
 
 **1) Use a criatividade para carregar mais fotos:**
 
-Atualmente são exibidas apenas 20 das 500 retornadas pela API.
+Atualmente são exibidas apenas 20 das 5000 retornadas pela API.
 
 **2) Implemente a busca:**
 
-Ao digitar no campo de busca, as fotos devem ser filtradas de acordo com seu título.
+Ao digitar no campo de busca, as fotos devem ser filtradas conforme o seu título.
 
 **3) Desenvolva a visualização por lista:**
 
-A página deve possibilitar a exibição por lista, onde as fotos serão dispostas uma em baixo da outra. O tipo de visualização é definido nos ícones ao lado do campo de busca.
+A página deve possibilitar a exibição por lista, onde as fotos serão dispostas uma em baixo da outra.
 
-Na visualização por lista, o thumbnail da imagem deve ser exibido ao invés da imagem original e ID de cada foto também deve ser apresentado.
+Na visualização por lista, o thumbnail da imagem deve ser exibido ao invés da imagem original e ID de cada foto também 
+deve ser apresentado.
 
+A mudança de visualização é definido nos ícones ao lado do campo de busca.
 
 ### O que pode ser feito: ###
 
-**1) Responsividade:**
+**1) Acabamento:**
 
-A página foi desenvolvida para a resolução de 1920x1080px, nos mostre que ela pode ficar apresentável em outras resoluções também.
+Quaisquer melhorias funcionais e visuais que melhorem a experiência do usuário na página são bem-vindas.
 
-**2) Acabamento:**
+**2) Estrutura do projeto:**
 
-Quaisquer melhorias funcionais e visuais que melhorem a experiência do usuário dentro da página são bem-vindas.
+Realizar melhorias na estrutura do projeto.
+
+**3) Frameworks e outras metodologias:**
+
+Caso sinta a necessidade de usar Vue-js v2.x, o mesmo pode ser usado.
+
+Caso queira usar TypeScript, será ponto a mais.
+
+Também é recomendado usar ferramentas de análise de código, indicamos o uso de organização e padronização com ESLint.
 
 ### O que vamos avaliar: ###
 
 1) Correta implementação das funcionalidades;
 
-2) Legibilidade do código;
+2) Legibilidade, simplicidade e manutenibilidade do código;
 
 3) Histórico de commits.
+
+4) Melhor uso dos frameworks

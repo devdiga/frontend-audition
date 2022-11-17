@@ -1,30 +1,22 @@
 {
   "name": "diga-frontend-audition",
   "version": "0.0.1",
-  "description": "This README would normally document whatever steps are necessary to get your application up and running.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/devdiga/frontend-audition.git"
-  },
-  "author": "Arthur Borba",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://bitbucket.org/devdiga/frontend-audition/issues"
-  },
-  "homepage": "https://bitbucket.org/devdiga/frontend-audition#readme",
-  "devDependencies": {
-    "css-loader": "^6.5.1",
-    "html-webpack-plugin": "^5.5.0",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^0.24.0"
+    "@mdi/font": "5.9.55",
+    "axios": "^1.1.3",
+    "roboto-fontface": "*",
+    "vue": "^3.2.38",
+    "vuetify": "^3.0.0",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.3",
+    "vite": "^3.1.8",
+    "vite-plugin-vuetify": "^1.0.0-alpha.12"
   }
 }
